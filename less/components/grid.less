@@ -1,0 +1,420 @@
+@import url('../common/variables.less');
+@import url('../common/mixin.less');
+
+/*!
+Simple Grid
+Author - Jeff Zhong
+*/
+[class*='grid'],
+[class*='col-'],
+[class*='sm-'],
+[class*='lg-'],
+.grid:after {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+[class*='col-'] {
+  float: left;
+  min-height: 1px;
+  padding-right: 20px; /* column-space */
+  [class*='col-']:last-child {
+    padding-right: 0;
+  }
+}
+
+
+.grid {
+  width: 100%;
+  max-width: 1140px;
+  min-width: 748px; /* when using padded grid on ipad in portrait mode, width should be viewport-width - padding = (768 - 20) = 748. actually, it should be even smaller to allow for padding of grid containing element */
+  margin: 0 auto;
+  overflow: hidden;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.grid-pad {
+  padding-top: 20px;
+  padding-left: 20px; /* grid-space to left */
+  padding-right: 0; /* grid-space to right: (grid-space-left - column-space) e.g. 20px-20px=0 */
+}
+
+.push-right {
+  float: right;
+}
+
+/* Content Columns */
+
+.col-1-1, .col-1 {
+  width: 100%;
+}
+.col-2-3, .col-8-12 {
+  width: 66.66%;
+}
+
+.col-1-2, .col-6-12 {
+  width: 50%;
+}
+
+.col-1-3, .col-4-12 {
+  width: 33.33%;
+}
+
+.col-1-4, .col-3-12 {
+  width: 25%;
+}
+
+.col-1-5 {
+  width: 20%;
+}
+
+.col-1-6, .col-2-12 {
+  width: 16.667%;
+}
+
+.col-1-7 {
+  width: 14.28%;
+}
+
+.col-1-8 {
+  width: 12.5%;
+}
+
+.col-1-9 {
+  width: 11.1%;
+}
+
+.col-1-10 {
+  width: 10%;
+}
+
+.col-1-11 {
+  width: 9.09%;
+}
+
+.col-1-12 {
+  width: 8.33%
+}
+
+/* Layout Columns */
+
+.col-11-12 {
+  width: 91.66%
+}
+
+.col-10-12 {
+  width: 83.333%;
+}
+
+.col-9-12 {
+  width: 75%;
+}
+
+.col-5-12 {
+  width: 41.66%;
+}
+
+.col-7-12 {
+  width: 58.33%
+}
+
+/* Pushing blocks */
+
+.push-2-3, .push-8-12 {
+  margin-left: 66.66%;
+}
+
+.push-1-2, .push-6-12 {
+  margin-left: 50%;
+}
+
+.push-1-3, .push-4-12 {
+  margin-left: 33.33%;
+}
+
+.push-1-4, .push-3-12 {
+  margin-left: 25%;
+}
+
+.push-1-5 {
+  margin-left: 20%;
+}
+
+.push-1-6, .push-2-12 {
+  margin-left: 16.667%;
+}
+
+.push-1-7 {
+  margin-left: 14.28%;
+}
+
+.push-1-8 {
+  margin-left: 12.5%;
+}
+
+.push-1-9 {
+  margin-left: 11.1%;
+}
+
+.push-1-10 {
+  margin-left: 10%;
+}
+
+.push-1-11 {
+  margin-left: 9.09%;
+}
+
+.push-1-12 {
+  margin-left: 8.33%
+}
+
+@media handheld, screen and (max-width: @screen-sm-min) {
+  .grid {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 20px; /* grid-space to left */
+    padding-right: 10px; /* grid-space to right: (grid-space-left - column-space) e.g. 20px-10px=10px */
+  }
+
+  [class*='col-'] {
+    width: auto;
+    float: none;
+    margin: 10px 0;
+    padding-left: 0;
+    padding-right: 10px; /* column-space */
+    [class*='col-'] {
+      padding-right: 0;
+    }
+  }
+
+  /* mobile Layout */
+
+  [class*='sm-col-'] {
+    float: left;
+    margin: 0 0 10px;
+    padding-left: 0;
+    padding-right: 10px; /* column-space */
+    padding-bottom: 0;
+  }
+
+  .sm-col-1-1, .sm-col-1 {
+    width: 100%;
+  }
+  .sm-col-2-3, .sm-col-8-12 {
+    width: 66.66%;
+  }
+
+  .sm-col-1-2, .sm-col-6-12 {
+    width: 50%;
+  }
+
+  .sm-col-1-3, .sm-col-4-12 {
+    width: 33.33%;
+  }
+
+  .sm-col-1-4, .sm-col-3-12 {
+    width: 25%;
+  }
+
+  .sm-col-1-5 {
+    width: 20%;
+  }
+
+  .sm-col-1-6, .sm-col-2-12 {
+    width: 16.667%;
+  }
+
+  .sm-col-1-7 {
+    width: 14.28%;
+  }
+
+  .sm-col-1-8 {
+    width: 12.5%;
+  }
+
+  .sm-col-1-9 {
+    width: 11.1%;
+  }
+
+  .sm-col-1-10 {
+    width: 10%;
+  }
+
+  .sm-col-1-11 {
+    width: 9.09%;
+  }
+
+  .sm-col-1-12 {
+    width: 8.33%
+  }
+
+  /* Layout Columns */
+
+  .sm-col-11-12 {
+    width: 91.66%
+  }
+
+  .sm-col-10-12 {
+    width: 83.333%;
+  }
+
+  .sm-col-9-12 {
+    width: 75%;
+  }
+
+  .sm-col-5-12 {
+    width: 41.66%;
+  }
+
+  .sm-col-7-12 {
+    width: 58.33%
+  }
+
+  .hide-on-sm {
+    display: none !important;
+    width: 0;
+    height: 0;
+  }
+}
+
+@media handheld, only screen and (min-width: @screen-md-min) {
+  .grid{
+    max-width: none;
+  }
+  /* 
+  [class*='push-']{
+     margin-left: 0;
+   }
+   */
+  .lg-push-right {
+    float: right;
+  }
+  /* Content Columns */
+  .lg-col-1-1, .lg-col-1 {
+    width: 100%;
+  }
+  .lg-col-2-3, .lg-col-8-12 {
+    width: 66.66%;
+  }
+
+  .lg-col-1-2, .lg-col-6-12 {
+    width: 50%;
+  }
+
+  .lg-col-1-3, .lg-col-4-12 {
+    width: 33.33%;
+  }
+
+  .lg-col-1-4, .lg-col-3-12 {
+    width: 25%;
+  }
+
+  .lg-col-1-5 {
+    width: 20%;
+  }
+
+  .lg-col-1-6, .lg-col-2-12 {
+    width: 16.667%;
+  }
+
+  .lg-col-1-7 {
+    width: 14.28%;
+  }
+
+  .lg-col-1-8 {
+    width: 12.5%;
+  }
+
+  .lg-col-1-9 {
+    width: 11.1%;
+  }
+
+  .lg-col-1-10 {
+    width: 10%;
+  }
+
+  .lg-col-1-11 {
+    width: 9.09%;
+  }
+
+  .lg-col-1-12 {
+    width: 8.33%
+  }
+
+  /* Layout lg-Columns */
+  .lg-col-11-12 {
+    width: 91.66%
+  }
+
+  .lg-col-10-12 {
+    width: 83.333%;
+  }
+
+  .lg-col-9-12 {
+    width: 75%;
+  }
+
+  .lg-col-5-12 {
+    width: 41.66%;
+  }
+
+  .lg-col-7-12 {
+    width: 58.33%
+  }
+
+  /* Pushing blocks */
+  .lg-push-2-3, .lg-push-8-12 {
+    margin-left: 66.66%;
+  }
+
+  .lg-push-1-2, .lg-push-6-12 {
+    margin-left: 50%;
+  }
+
+  .lg-push-1-3, .lg-push-4-12 {
+    margin-left: 33.33%;
+  }
+
+  .lg-push-1-4, .lg-push-3-12 {
+    margin-left: 25%;
+  }
+
+  .lg-push-1-5 {
+    margin-left: 20%;
+  }
+
+  .lg-push-1-6, .lg-push-2-12 {
+    margin-left: 16.667%;
+  }
+
+  .lg-push-1-7 {
+    margin-left: 14.28%;
+  }
+
+  .lg-push-1-8 {
+    margin-left: 12.5%;
+  }
+
+  .lg-push-1-9 {
+    margin-left: 11.1%;
+  }
+
+  .lg-push-1-10 {
+    margin-left: 10%;
+  }
+
+  .lg-push-1-11 {
+    margin-left: 9.09%;
+  }
+
+  .lg-push-1-12 {
+    margin-left: 8.33%
+  }
+}

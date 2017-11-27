@@ -1,0 +1,68 @@
+@import url('../common/variables.less');
+@import url('../common/mixin.less');
+/*!
+Pure v1.0.0
+Copyright 2017 Jeff Zhong!
+Licensed under the MIT License.
+https://github.com/edwardzhong/pure/LICENSE.md
+*/
+/* Base Extras
+   ========================================================================== */
+   
+/**
+ * Always hide an element when it has the `hidden` HTML attribute.
+ */
+.hide,
+[hidden] {
+    display: none !important;
+}
+.show {
+  display: block !important;
+}
+
+/**
+ * Add this class to an image to make it fit within it's fluid parent wrapper while maintaining
+ * aspect ratio.
+ */
+.img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.clearfix {
+  .clearfix();
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+
+ul,ol{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+}
+
+:after, :before {
+  // -moz-box-sizing: border-box;
+  // -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*angle apply to in-line element*/
+.caret-up:after {
+  padding-left: 10px;
+  content: "\25B8";
+  font-size: small;
+}
+.caret-down:after {
+  padding-left:10px;
+  content: "\25BE";
+  font-size: small;
+}
+
