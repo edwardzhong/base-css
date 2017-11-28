@@ -7,7 +7,8 @@ var autoprefixer = require('autoprefixer');
 var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var watch = require('gulp-watch');
- 
+var name ='base';//生成文件名称
+
 gulp.task('watch', function () {
     return watch(['./less/**/*.less'], function (){
         gulp.src('./less/**/*.less')
@@ -33,7 +34,7 @@ gulp.task('css',['less'],function() {
                 // "browsers": ["last 2 version", "> 0.1%"]
             })
         ]))
-        .pipe(rename('pure.css'))
+        .pipe(rename(name+'.css'))
         .pipe(gulp.dest('./dist'))
         .pipe(cleanCSS())//代替 gulp-minify-css
         .pipe(rename({suffix: '.min'}))

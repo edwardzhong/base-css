@@ -1,0 +1,50 @@
+html,body{
+    font-family: "Raleway","Roboto", FreeSans, Arimo, "Droid Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+    height: 100%;
+}
+.main{
+    padding: 10px;
+}
+
+.grid div{
+	border: 1px solid #ddd;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: #aaa;
+}
+.box-wrap {
+    height: 50px;
+    line-height: 50px;
+}
+.box-wrap label {
+    display: inline-block;
+    width: 120px;
+    padding: 0 10px;
+}
+
+.menu-scrollable {
+    width: 700px;
+}
+
+.custom-restricted {
+    height: 160px;
+    width: 150px;
+    border: 1px solid hsl(0, 0%, 50%);
+    border-radius: 4px;
+}
+
+.panel-wrap{
+	margin: 20px 10px;
+}
+
+.index-list a{
+	display: block;
+	padding: 5px 10px;
+}
+.index-list a:hover{
+	font-weight: bold;
+	color: hsla(200,100%,50%,1);
+}
