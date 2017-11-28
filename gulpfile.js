@@ -41,14 +41,4 @@ gulp.task('css',['less'],function() {
         .pipe(gulp.dest('./dist'));
 });
 
-// gulp.task('css', function() {
-//     return gulp.src(['css/normalize.css','css/index.css'])
-//         .pipe(concatCss("pure.css"))
-//         .pipe(postcss([ autoprefixer()]))
-//         .pipe(gulp.dest('./dist'))
-//         .pipe(cleanCSS())//代替 gulp-minify-css
-//         .pipe(rename({suffix: '.min'}))
-//         .pipe(gulp.dest('./dist'));
-// });
-
 gulp.task("default", ['css']);
