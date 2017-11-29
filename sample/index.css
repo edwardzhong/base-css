@@ -1,9 +1,13 @@
-html,body{
-    font-family: "Raleway","Roboto", FreeSans, Arimo, "Droid Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #555;
+html{
+    font-family: "Raleway","Roboto","Droid Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #666;
     font-size: 1em;
     line-height: 1.6;
+    font-weight: lighter;
     height: 100%;
+}
+body{
+    margin: 0;
 }
 .main{
     padding: 10px;
@@ -45,6 +49,6 @@ html,body{
 	padding: 5px 10px;
 }
 .index-list a:hover{
-	font-weight: bold;
+	font-weight: normal;
 	color: hsla(200,100%,50%,1);
 }
