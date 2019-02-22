@@ -1,4 +1,3 @@
-
 /* Pager
 ========================================================================== */
 
@@ -8,10 +7,10 @@
   text-align: center;
   list-style: none;
   @extend .clearfix;
-  li{
+  li {
     display: inline;
-    >a,
-    >span{
+    > a,
+    > span {
       display: inline-block;
       padding: 5px 14px;
       color: $pager-color;
@@ -19,31 +18,31 @@
       border: 1px solid $pager-border;
       border-radius: $pager-border-radius;
     }
-    >a{
+    > a {
       &:focus,
-      &:hover{
+      &:hover {
         text-decoration: none;
         background-color: $pager-hover-bg;
       }
     }
   }
-  .previous{
-    >a,
-    >span{
+  .previous {
+    > a,
+    > span {
       float: left;
     }
   }
-  .next{
-    >a,
-    >span{
+  .next {
+    > a,
+    > span {
       float: right;
     }
   }
-  .disabled{
-    >a,
-    >a:focus,
-    >a:hover,
-    >span{
+  .disabled {
+    > a,
+    > a:focus,
+    > a:hover,
+    > span {
       color: $pager-disabled-color;
       background-color: $pager-bg;
       cursor: not-allowed;

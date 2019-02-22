@@ -1,4 +1,3 @@
-
 /* Form
    ========================================================================== */
 /*
@@ -7,7 +6,7 @@ also have border and padding. This is done because some browsers don't render
 the padding. We explicitly set the box-model for select elements to border-box,
 so we can ignore the csslint warning.
 */
-.form{
+.form {
   input[type="text"],
   input[type="password"],
   input[type="email"],
@@ -42,12 +41,12 @@ so we can ignore the csslint warning.
     border: 1px solid $form-border-color;
     box-shadow: inset 0 1px 3px #ddd;
     border-radius: 4px;
-    box-sizing: border-box;  
+    box-sizing: border-box;
   }
   /* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
   /* May be able to remove this tweak as color inputs become more standardized across browsers. */
   input[type="color"] {
-      padding: 0.2em 0.5em;
+    padding: 0.2em 0.5em;
   }
 
   input[type="text"]:focus,
@@ -168,7 +167,7 @@ so we can ignore the csslint warning.
   }
 }
 
-.form-stacked{
+.form-stacked {
   input[type="text"],
   input[type="password"],
   input[type="email"],
@@ -201,7 +200,7 @@ so we can ignore the csslint warning.
   }
 }
 
-.form-aligned{
+.form-aligned {
   input,
   textarea,
   select {
@@ -232,7 +231,7 @@ so we can ignore the csslint warning.
 }
 
 /* Rounded Inputs */
-.form{
+.form {
   input.input-rounded,
   .input-rounded {
     border-radius: 2em;
@@ -240,7 +239,7 @@ so we can ignore the csslint warning.
   }
 
   /* Grouped Inputs */
-  .group{
+  .group {
     fieldset {
       margin-bottom: 10px;
     }
@@ -252,20 +251,20 @@ so we can ignore the csslint warning.
       border-radius: 0;
       position: relative;
       top: -1px;
-      &:focus{
+      &:focus {
         z-index: 3;
       }
-      &:first-child{
+      &:first-child {
         top: 1px;
         border-radius: 4px 4px 0 0;
         margin: 0;
-        &:last-child{
+        &:last-child {
           top: 1px;
           border-radius: 4px;
           margin: 0;
         }
       }
-      &:last-child{
+      &:last-child {
         top: -2px;
         border-radius: 0 0 4px 4px;
         margin: 0;
@@ -295,59 +294,59 @@ so we can ignore the csslint warning.
   }
 }
 
-@media only screen and (max-width : 480px) {
-    .form{
-      button[type="submit"] {
-        margin: 0.7em 0 0;
-      }
-      input:not([type]),
-      input[type="text"],
-      input[type="password"],
-      input[type="email"],
-      input[type="url"],
-      input[type="date"],
-      input[type="month"],
-      input[type="time"],
-      input[type="datetime"],
-      input[type="datetime-local"],
-      input[type="week"],
-      input[type="number"],
-      input[type="search"],
-      input[type="tel"],
-      input[type="color"],
-      label {
-        margin-bottom: 0.3em;
-        display: block;
-      }
+@media only screen and (max-width: 480px) {
+  .form {
+    button[type="submit"] {
+      margin: 0.7em 0 0;
     }
-    .group{
-      input:not([type]),
-      input[type="text"],
-      input[type="password"],
-      input[type="email"],
-      input[type="url"],
-      input[type="date"],
-      input[type="month"],
-      input[type="time"],
-      input[type="datetime"],
-      input[type="datetime-local"],
-      input[type="week"],
-      input[type="number"],
-      input[type="search"],
-      input[type="tel"],
-      input[type="color"] {
-        margin-bottom: 0;
-      }
+    input:not([type]),
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="week"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    label {
+      margin-bottom: 0.3em;
+      display: block;
     }
-    .form-aligned{
-      .control-group label {
-        margin-bottom: 0.3em;
-        text-align: left;
-        display: block;
-        width: 100%;
-      }
-      .controls {
-        margin: 1.5em 0 0 0;
-      }
+  }
+  .group {
+    input:not([type]),
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="week"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"] {
+      margin-bottom: 0;
     }
+  }
+  .form-aligned {
+    .control-group label {
+      margin-bottom: 0.3em;
+      text-align: left;
+      display: block;
+      width: 100%;
+    }
+    .controls {
+      margin: 1.5em 0 0 0;
+    }
+  }
 }

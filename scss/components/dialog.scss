@@ -1,4 +1,3 @@
-
 //
 // Modals
 // --------------------------------------------------
@@ -32,23 +31,23 @@
     transform: translate(0, -50%);
     opacity: 0;
   }
-  &.in .modal-dialog { 
-    transform: translate(0, 0); 
+  &.in .modal-dialog {
+    transform: translate(0, 0);
     opacity: 1;
   }
-    
-    // display: block;
-    // visibility: hidden;
-    // backface-visibility: hidden;
-    // perspective: 1300px;
-    // &.rotate {
-    //     visibility: visible;
-    //     display: block;
-    //     .modal-dialog {
-    //         opacity: 1;
-    //         transform: rotateY(0);
-    //     }
-    // }
+
+  // display: block;
+  // visibility: hidden;
+  // backface-visibility: hidden;
+  // perspective: 1300px;
+  // &.rotate {
+  //     visibility: visible;
+  //     display: block;
+  //     .modal-dialog {
+  //         opacity: 1;
+  //         transform: rotateY(0);
+  //     }
+  // }
 }
 .modal-open .modal {
   overflow-x: hidden;
@@ -73,7 +72,7 @@
   background-color: $modal-content-bg;
   border: 1px solid $modal-content-border-color;
   border-radius: $border-radius-base;
-  box-shadow: 0 3px 9px rgba(0,0,0,.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   background-clip: padding-box;
   // Remove focus outline from opened modal
   outline: 0;
@@ -91,8 +90,12 @@
   background-color: $modal-backdrop-bg;
   transition: all 0.3s ease-in-out;
   // Fade for backdrop
-  &.fade { opacity: 0; }
-  &.in { opacity:$modal-backdrop-opacity; }
+  &.fade {
+    opacity: 0;
+  }
+  &.in {
+    opacity: $modal-backdrop-opacity;
+  }
 }
 
 // Modal header
@@ -150,13 +153,17 @@
     margin: 30px auto;
   }
   .modal-content {
-    box-shadow:0 5px 15px rgba(0,0,0,.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   }
 
   // Modal sizes
-  .modal-sm { width: $modal-sm; }
+  .modal-sm {
+    width: $modal-sm;
+  }
 }
 
 @media (min-width: $screen-md-min) {
-  .modal-lg { width: $modal-lg; }
+  .modal-lg {
+    width: $modal-lg;
+  }
 }

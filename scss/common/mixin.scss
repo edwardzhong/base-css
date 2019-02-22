@@ -1,22 +1,7 @@
-// Mixin
-@mixin center-block() {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* Mixin */
 
-@mixin size($width, $height) {
-  width: $width;
-  height: $height;
-}
-
-@mixin text-overflow() {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-@mixin clearfix() {
+//clearfix
+@mixin clearfix {
   &:before,
   &:after {
     content: " ";
@@ -28,7 +13,7 @@
 }
 
 // Alerts
-@mixin alert-variant($background,$border,$text-color) {
+@mixin alert-variant($background, $border, $text-color) {
   background-color: $background;
   border-color: $border;
   color: $text-color;
@@ -43,8 +28,8 @@
 
 // Button
 @mixin button-variant($color, $background) {
-    color: $color;
-    background-color: $background;
+  color: $color;
+  background-color: $background;
 }
 
 // Panels
@@ -71,7 +56,7 @@
   }
 }
 
-
+//border-radius
 @mixin border-top-radius($radius) {
   border-top-right-radius: $radius;
   border-top-left-radius: $radius;

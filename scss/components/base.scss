@@ -1,4 +1,3 @@
-
 /*!
 Pure v1.0.0
 Copyright 2017 Jeff Zhong!
@@ -6,33 +5,48 @@ Licensed under the MIT License.
 https://github.com/edwardzhong/pure/LICENSE.md
 */
 /* Base Extras
-   ========================================================================== */   
+   ========================================================================== */
 /**
  * Always hide an element when it has the `hidden` HTML attribute.
  */
-html{
+html {
+  height: 100%;
   font-family: $font-family-base;
-  font-size: $font-size-base; 
-  height: 100%;
+  font-size: $font-size-base;
 }
-body{
+body {
   height: 100%;
+  background-color: $body-bg;
+  color: $text-color;
 }
-p,h1,h2,h3,h4,h5,h6{ margin:0;}
+// p,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   margin: 0;
+// }
 
-ul,ol{
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-a{
+a {
   text-decoration: none;
+  color: $link-color;
+  &:hover{
+    color: $link-hover-color;
+  }
 }
 /**
  * Add this class to an image to make it fit within it's fluid parent wrapper while maintaining
  * aspect ratio.
  */
- .img {
+.img {
   max-width: 100%;
   height: auto;
   display: block;
@@ -40,24 +54,23 @@ a{
 
 .hide,
 [hidden] {
-    display: none !important;
+  display: none !important;
 }
 .show {
   display: block !important;
 }
 
-
 .clearfix {
   @include clearfix;
 }
-.fl{
+.fl {
   float: left;
 }
-.fr{
+.fr {
   float: right;
 }
 
-:after, :before {
+:after,
+:before {
   box-sizing: border-box;
 }
-

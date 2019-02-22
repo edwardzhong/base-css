@@ -5,18 +5,18 @@
 //== Grid
 //
 //##
-$screen-sm-min:              768px;
-$screen-md-min:              1280px;
+$screen-sm-min:         768px;
+$screen-md-min:         1280px;
 
 //== Colors
 //
 //## Gray and brand colors.
-$gray-base:              #000;
-$gray-darker:            lighten($gray-base, 13.5%); // #222
-$gray-dark:              lighten($gray-base, 20%);   // #333
-$gray:                   lighten($gray-base, 33.5%); // #555
-$gray-light:             lighten($gray-base, 46.7%); // #777
-$gray-lighter:           lighten($gray-base, 93.5%); // #eee
+$gray-base:             #000;
+$gray-darker:           lighten($gray-base, 13.5%); // #222
+$gray-dark:             lighten($gray-base, 20%);   // #333
+$gray:                  lighten($gray-base, 33.5%); // #555
+$gray-light:            lighten($gray-base, 46.7%); // #777
+$gray-lighter:          lighten($gray-base, 93.5%); // #eee
 
 $brand-primary:         hsl(209, 100%, 45%);
 $brand-success:         hsl(134, 74%, 42%);
@@ -29,12 +29,11 @@ $brand-danger:          hsl(2, 64%, 58%);
 //** Background color for `<body>`.
 $body-bg:               #fff;
 //** Global text color on `<body>`.
-$text-color:            $gray-dark;
+$text-color:            $gray;
 //** Global textual link color.
 $link-color:            $brand-primary;
 $link-hover-color:      darken($link-color, 18%);
 $border-radius-base:    4px;
-
 
 //== Font
 //## Font, line-height, and color for body text, headings, and more.
@@ -96,8 +95,8 @@ $btn-danger-color:               #fff;
 $btn-danger-bg:                  $brand-danger;
 $btn-danger-border:              darken($btn-danger-bg, 5%);
 
-$close-color:                 #000;
-$close-text-shadow:           0 1px 0 #fff;
+$close-color:                    #000;
+$close-text-shadow:              0 1px 0 #fff;
 
 //== Form states and alerts
 //
@@ -194,7 +193,7 @@ $breadcrumb-color:              #ccc;
 //** Text color of current page in the breadcrumb
 $breadcrumb-active-color:       $gray-light;
 //** Textual separator for between breadcrumb elements
-$breadcrumb-separator:          "/";
+$breadcrumb-separator:          "|";
 
 //== Form
 //
@@ -324,8 +323,8 @@ $checkbox-bg:                          $brand-primary;
 //== Switch
 //
 //##
-$switch-width:                         40px;
-$switch-height:                        25px;
+$switch-width:                         34px;
+$switch-height:                        20px;
 $switch-bg:                            $brand-primary;
 
 
