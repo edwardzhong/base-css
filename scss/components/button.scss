@@ -17,9 +17,9 @@
   font-size: 100%;
   padding: $btn-padding;
   color: #444; /* rgba not supported (IE 8) */
-  color: rgba(0, 0, 0, 0.8); /* rgba supported */
+  color: hsla(0, 0%, 0%, 0.8); /* rgba supported */
   border: 1px solid #999; /*IE 6/7/8*/
-  border: none rgba(0, 0, 0, 0); /*IE9 + everything else*/
+  border: none hsla(0, 0%, 0%, 0); /*IE9 + everything else*/
   background-color: $btn-default-bg;
   text-decoration: none;
   border-radius: 2px;
@@ -45,7 +45,7 @@
 .button:hover,
 .button:focus {
   filter: alpha(opacity=90);
-  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.15));
+  background-image: linear-gradient(transparent, hsla(0, 0%, 0%, 0.1) 40%, hsla(0, 0%, 0%, 0.15));
 }
 .button:focus {
   outline: 0;
@@ -53,7 +53,7 @@
 .button.active,
 .button-active,
 .button:active {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.15) inset, 0 0 6px hsla(0, 0%, 0%, 0.2) inset;
   border-color: #000;
 }
 
@@ -110,6 +110,12 @@ a.button-info {
   @include button-variant($btn-info-color, $btn-info-bg);
 }
 
+/* this is a dark gray */
+.button-dark,
+a.button-dark {
+  @include button-variant($btn-dark-color, $btn-dark-bg);
+}
+
 .button-small {
   font-size: 80%;
 }
@@ -126,7 +132,7 @@ a.button-info {
     margin: 0;
     border-radius: 0;
     border-right: 1px solid #111; /* fallback color for rgba() for IE7/8 */
-    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid hsla(0, 0%, 0%, 0.2);
     &:first-child {
       @include border-left-radius(3px);
     }

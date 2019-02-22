@@ -1,3 +1,44 @@
+/* input radio
+   ========================================================================== */
+   input[type="radio"].radio {
+    width: $radio-width;
+    height: 1px;
+    position: relative;
+    overflow: visible;
+    border: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: 0;
+    vertical-align: middle;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -10px;
+      width: max(16px,$radio-width);
+      height: max(16px,$radio-width);
+      border: 1px solid #dfdfdf;
+      border-radius: 50%;
+      user-select: none;
+      cursor: pointer;
+      font-size: 12px;
+      overflow: hidden;
+      color: #fff;
+    }
+    &:checked {
+      &:after {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: 4px;
+        width: $radio-width - 8;
+        height: $radio-width - 8;
+        border-radius: 50%;
+        background-color: $radio-bg;
+      }
+    }
+  }
+
 /* input checkbox
    ========================================================================== */
 input[type="checkbox"] {
@@ -25,7 +66,7 @@ input[type="checkbox"] {
       border-radius: 50%;
       user-select: none;
       cursor: pointer;
-      font-size: min(13px, $checkbox-width/2);
+      font-size: min(10px, $checkbox-width/2);
       overflow: hidden;
       color: #fff;
     }
@@ -89,47 +130,6 @@ input[type="checkbox"] {
       &:after {
         left: $switch-width - $switch-height + 1;
       }
-    }
-  }
-}
-
-/* input radio
-   ========================================================================== */
-input[type="radio"].radio {
-  width: $radio-width;
-  height: 1px;
-  position: relative;
-  overflow: visible;
-  border: 0;
-  -webkit-appearance: none;
-  appearance: none;
-  outline: 0;
-  vertical-align: middle;
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -10px;
-    width: $radio-width;
-    height: $radio-width;
-    border: 1px solid #dfdfdf;
-    border-radius: 50%;
-    user-select: none;
-    cursor: pointer;
-    font-size: 12px;
-    overflow: hidden;
-    color: #fff;
-  }
-  &:checked {
-    &:after {
-      content: "";
-      position: absolute;
-      top: -5px;
-      left: 5px;
-      width: $radio-width - 10;
-      height: $radio-width - 10;
-      border-radius: 50%;
-      background-color: $radio-bg;
     }
   }
 }

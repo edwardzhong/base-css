@@ -80,6 +80,10 @@ $btn-danger-color:               #fff;
 $btn-danger-bg:                  $brand-danger;
 $btn-danger-border:              darken($btn-danger-bg, 5%);
 
+$btn-dark-color:                 #fff;
+$btn-dark-bg:                    $gray;
+$btn-dark-border:                darken($btn-dark-bg, 5%);
+
 $close-color:                    #000;
 $close-text-shadow:              0 1px 0 #fff;
 
@@ -113,6 +117,10 @@ $state-danger-text:              hsl(1, 44%, 46%);
 $state-danger-bg:                hsl(0, 43%, 91%);
 $state-danger-border:            darken($state-danger-bg, 5%);
 
+$state-dark-text:                $gray-dark;
+$state-dark-bg:                  #dedede;
+$state-dark-border:              darken($state-dark-bg, 5%);
+
 //== Tables
 //
 //## Customizes the `.table` component with basic values, each used across all table variations.
@@ -124,7 +132,7 @@ $table-bg-odd:                  #f2f2f2;
 //** Border color for table and cell borders.
 $table-border-color:            #cbcbcb;
 // thead background-color
-$table-thead-bg:                #e0e0e0;
+$table-thead-bg:                #ddd;
 // thead color
 $table-thead-color:             #000;
 
@@ -181,6 +189,10 @@ $alert-danger-bg:             $state-danger-bg;
 $alert-danger-text:           $state-danger-text;
 $alert-danger-border:         $state-danger-border;
 
+$alert-dark-bg:               $state-dark-bg;
+$alert-dark-text:             $state-dark-text;
+$alert-dark-border:           $state-dark-border;
+
 //== Panels
 //
 //##
@@ -218,6 +230,10 @@ $panel-danger-text:           $state-danger-text;
 $panel-danger-border:         $state-danger-border;
 $panel-danger-heading-bg:     $state-danger-bg;
 
+$panel-dark-text:             $state-dark-text;
+$panel-dark-border:           $state-dark-border;
+$panel-dark-heading-bg:       $state-dark-bg;
+
 
 //== Breadcrumbs
 //
@@ -230,7 +246,7 @@ $breadcrumb-color:              #ccc;
 //** Text color of current page in the breadcrumb
 $breadcrumb-active-color:       $gray-light;
 //** Textual separator for between breadcrumb elements
-$breadcrumb-separator:          "|";
+$breadcrumb-separator:          "/";
 
 
 //== Pagination
@@ -297,21 +313,21 @@ $tab-disabled-link-hover-color:        $gray-light;
 //== Checkbox
 //
 //##
-$checkbox-width:                       20px;
+$checkbox-width:                       18px;
 $checkbox-bg:                          $brand-primary;
 
 //== Switch
 //
 //##
-$switch-width:                         34px;
-$switch-height:                        20px;
+$switch-width:                         30px;
+$switch-height:                        16px;
 $switch-bg:                            $brand-primary;
 
 
 //== Radio
 //
 //##
-$radio-width:                          20px;
+$radio-width:                          18px;
 $radio-bg:                             $brand-primary;
 
 //-- Z-index master list
