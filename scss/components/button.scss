@@ -1,5 +1,3 @@
-@import url('../common/variables.less');
-@import url('../common/mixin.less');
 
 /* Button
    ========================================================================== */
@@ -15,18 +13,15 @@
   cursor: pointer;
   -webkit-user-drag: none;
   user-select: none;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-
   font-family: inherit;
   font-size: 100%;
-  padding: @btn-padding;
+  padding: $btn-padding;
   color: #444; /* rgba not supported (IE 8) */
   color: rgba(0, 0, 0, 0.80); /* rgba supported */
   border: 1px solid #999;  /*IE 6/7/8*/
   border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
-  background-color: @btn-default-bg;
+  background-color: $btn-default-bg;
   text-decoration: none;
   border-radius: 2px;
 }
@@ -60,7 +55,7 @@
 .button-active,
 .button:active {
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
-    border-color: #000\9;
+    border-color: #000;
 }
 
 .button[disabled],
@@ -71,7 +66,6 @@
 .button-disabled:active {
     border: none;
     background-image: none;
-    filter: alpha(opacity=40);
     opacity: 0.40;
     cursor: not-allowed;
     box-shadow: none;
@@ -90,31 +84,31 @@
 /* this is a blue */
 .button-primary,
 a.button-primary {
-  .button-variant(@btn-primary-color,@btn-primary-bg);
+  @include button-variant($btn-primary-color,$btn-primary-bg);
 }
 
 /* this is a green */
 .button-success,
 a.button-success {
-  .button-variant(@btn-success-color,@btn-success-bg);
+  @include button-variant($btn-success-color,$btn-success-bg);
 }
 
 /* this is a maroon */
 .button-danger,
 a.button-danger {
-  .button-variant(@btn-danger-color,@btn-danger-bg);
+  @include button-variant($btn-danger-color,$btn-danger-bg);
 }
 
 /* this is an orange */
 .button-warning,
 a.button-warning {
-  .button-variant(@btn-warning-color,@btn-warning-bg);
+  @include button-variant($btn-warning-color,$btn-warning-bg);
 }
 
 /* this is a light blue */
 .button-info,
 a.button-info {
-  .button-variant(@btn-info-color,@btn-info-bg);
+  @include button-variant($btn-info-color,$btn-info-bg);
 }
 
 .button-small {
@@ -127,7 +121,7 @@ a.button-info {
 
 /* Button Groups */
 .button-group {
-  &:extend(.clearfix all);
+  @extend .clearfix;
   .button {
     float: left;
     margin: 0;
@@ -135,10 +129,10 @@ a.button-info {
     border-right: 1px solid #111;  /* fallback color for rgba() for IE7/8 */
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     &:first-child {
-      .border-left-radius(3px);
+      @include border-left-radius(3px);
     }
     &:last-child {
-      .border-right-radius(3px);
+      @include border-right-radius(3px);
       border-right: none;
     }
   }
@@ -157,39 +151,18 @@ a.button-info {
 
 .close {
   float: right;
-  font-size: (@font-size-base * 1.5);
+  font-size: ($font-size-base * 1.5);
   line-height: 1;
-  color: @close-color;
-  text-shadow: @close-text-shadow;
-  .opacity(.2);
-
+  color: $close-color;
+  text-shadow: $close-text-shadow;
+  opacity: .2;
+  filter: alpha(opacity=20);
   &:hover,
   &:focus {
-    color: @close-color;
+    color: $close-color;
     text-decoration: none;
     cursor: pointer;
-    .opacity(.5);
-  }
-
-  // Additional properties for button version
-  // iOS requires the button element instead of an anchor tag.
-  // If you want the anchor version, it requires `href="#"`.
-  // See https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
-  button& {
-    padding: 0;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    -webkit-appearance: none;
+    opacity: .5;
+    filter: alpha(opacity=50);
   }
 }
-/* close button */
-// .close-icon:before{
-//   content:"×"; //"\2716";//'×';
-//   float: right;
-//   padding: 5px;
-//   text-shadow: 0 1px 0 #fff;
-//   filter: alpha(opacity=20);
-//   opacity: .2;
-//   cursor: pointer;
-// }

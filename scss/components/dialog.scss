@@ -1,5 +1,3 @@
-@import url('../common/variables.less');
-@import url('../common/mixin.less');
 
 //
 // Modals
@@ -24,7 +22,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: @zindex-modal;
+  z-index: $zindex-modal;
   -webkit-overflow-scrolling: touch;
   // Prevent Chrome on Windows from adding a focus outline. For details, see
   outline: 0;
@@ -32,11 +30,11 @@
   // When fading in the modal, animate it to slide down
   &.fade .modal-dialog {
     transform: translate(0, -50%);
-    .opacity(0);
+    opacity: 0;
   }
   &.in .modal-dialog { 
     transform: translate(0, 0); 
-    .opacity(1);
+    opacity: 1;
   }
     
     // display: block;
@@ -72,9 +70,9 @@
 // Actual modal
 .modal-content {
   position: relative;
-  background-color: @modal-content-bg;
-  border: 1px solid @modal-content-border-color;
-  border-radius: @border-radius-base;
+  background-color: $modal-content-bg;
+  border: 1px solid $modal-content-border-color;
+  border-radius: $border-radius-base;
   box-shadow: 0 3px 9px rgba(0,0,0,.5);
   background-clip: padding-box;
   // Remove focus outline from opened modal
@@ -89,20 +87,20 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: @zindex-modal-background;
-  background-color: @modal-backdrop-bg;
+  z-index: $zindex-modal-background;
+  background-color: $modal-backdrop-bg;
   transition: all 0.3s ease-in-out;
   // Fade for backdrop
-  &.fade { .opacity(0); }
-  &.in { .opacity(@modal-backdrop-opacity); }
+  &.fade { opacity: 0; }
+  &.in { opacity:$modal-backdrop-opacity; }
 }
 
 // Modal header
 // Top section of the modal w/ title and dismiss
 .modal-header {
-  padding: @modal-title-padding;
-  border-bottom: 1px solid @modal-header-border-color;
-  &:extend(.clearfix all);
+  padding: $modal-title-padding;
+  border-bottom: 1px solid $modal-header-border-color;
+  @extend .clearfix;
 }
 // Close icon
 .modal-header .close {
@@ -112,22 +110,22 @@
 // Title text within header
 .modal-title {
   margin: 0;
-  line-height: @modal-title-line-height;
+  line-height: $modal-title-line-height;
 }
 
 // Modal body
 // Where all modal content resides (sibling of .modal-header and .modal-footer)
 .modal-body {
   position: relative;
-  padding: @modal-inner-padding;
+  padding: $modal-inner-padding;
 }
 
 // Footer (for actions)
 .modal-footer {
-  padding: @modal-inner-padding;
+  padding: $modal-inner-padding;
   text-align: right; // right align buttons
-  border-top: 1px solid @modal-footer-border-color;
-  &:extend(.clearfix all); // clear it in case folks use .pull-* classes on buttons
+  border-top: 1px solid $modal-footer-border-color;
+  @extend .clearfix; // clear it in case folks use .pull-* classes on buttons
 
   // Properly space out buttons
   .button + .button {
@@ -145,10 +143,10 @@
 }
 
 // Scale up the modal
-@media (min-width: @screen-sm-min) {
+@media (min-width: $screen-sm-min) {
   // Automatically set modal's width for larger viewports
   .modal-dialog {
-    width: @modal-md;
+    width: $modal-md;
     margin: 30px auto;
   }
   .modal-content {
@@ -156,9 +154,9 @@
   }
 
   // Modal sizes
-  .modal-sm { width: @modal-sm; }
+  .modal-sm { width: $modal-sm; }
 }
 
-@media (min-width: @screen-md-min) {
-  .modal-lg { width: @modal-lg; }
+@media (min-width: $screen-md-min) {
+  .modal-lg { width: $modal-lg; }
 }

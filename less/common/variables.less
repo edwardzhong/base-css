@@ -13,11 +13,11 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         #0078e7;
-@brand-success:         #1cb841;
-@brand-info:            #42b8dd;
-@brand-warning:         #efa946;
-@brand-danger:          #d8544f;
+@brand-primary:         hsl(209, 100%, 45%);
+@brand-success:         hsl(134, 74%, 42%);
+@brand-info:            hsl(194, 70%, 56%);
+@brand-warning:         hsl(35, 84%, 61%);
+@brand-danger:          hsl(2, 64%, 58%);
 
 
 //== Global
@@ -98,20 +98,20 @@
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-@state-success-text:             #3c763d;
-@state-success-bg:               #dff0d8;
+@state-success-text:             hsl(121, 33%, 35%);
+@state-success-bg:               hsl(103, 44%, 89%);
 @state-success-border:           darken(spin(@state-success-bg, -10), 5%);
 
-@state-info-text:                #31708f;
-@state-info-bg:                  #d9edf7;
+@state-info-text:                hsl(200, 49%, 38%);
+@state-info-bg:                  hsl(200, 65%, 91%);
 @state-info-border:              darken(spin(@state-info-bg, -10), 7%);
 
-@state-warning-text:             #8a6d3b;
-@state-warning-bg:               #fcf8e3;
+@state-warning-text:             hsl(38, 40%, 39%);
+@state-warning-bg:               hsl(50, 81%, 94%);
 @state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
 
-@state-danger-text:              #a94442;
-@state-danger-bg:                #f2dede;
+@state-danger-text:              hsl(1, 44%, 46%);
+@state-danger-bg:                hsl(0, 43%, 91%);
 @state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
 
 //== Alerts
@@ -195,11 +195,11 @@
 //
 //##
 @form-border-color:          #ccc;
-@form-focus-color:           #129FEA;
-@form-disabled-color:        #cad2d3;
-@form-disabled-bg:           #eaeded;
-@form-invalid-color:         #b94a48;
-@form-invalid-border:        #e9322d;
+@form-focus-color:           hsl(201, 86%, 49%);
+@form-disabled-color:        hsl(187, 9%, 81%);
+@form-disabled-bg:           hsl(180, 8%, 92%);
+@form-invalid-color:         hsl(1, 45%, 50%);
+@form-invalid-border:        hsl(2, 81%, 55%);
 
 //== Pagination
 //
@@ -281,7 +281,7 @@
 //** Background color of modal content area
 @modal-content-bg:            #fff;
 //** Modal content border color
-@modal-content-border-color:  rgba(0,0,0,.2);
+@modal-content-border-color:  hsla(0, 0%, 0%, 0.2);
 
 //** Modal backdrop background color
 @modal-backdrop-bg:           #000;

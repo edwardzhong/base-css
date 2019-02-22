@@ -1,31 +1,29 @@
-@import url('../common/variables.less');
-@import url('../common/mixin.less');
 
 /* Pager
 ========================================================================== */
 
 .pager {
   padding-left: 0;
-  margin: @line-height-computed 0;
+  margin: $line-height-computed 0;
   text-align: center;
   list-style: none;
-  &:extend(.clearfix all);
+  @extend .clearfix;
   li{
     display: inline;
     >a,
     >span{
       display: inline-block;
       padding: 5px 14px;
-      color: @pager-color;
-      background-color: @pager-bg;
-      border: 1px solid @pager-border;
-      border-radius: @pager-border-radius;
+      color: $pager-color;
+      background-color: $pager-bg;
+      border: 1px solid $pager-border;
+      border-radius: $pager-border-radius;
     }
     >a{
       &:focus,
       &:hover{
         text-decoration: none;
-        background-color: @pager-hover-bg;
+        background-color: $pager-hover-bg;
       }
     }
   }
@@ -46,8 +44,8 @@
     >a:focus,
     >a:hover,
     >span{
-      color: @pager-disabled-color;
-      background-color: @pager-bg;
+      color: $pager-disabled-color;
+      background-color: $pager-bg;
       cursor: not-allowed;
     }
   }

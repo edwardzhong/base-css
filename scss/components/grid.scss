@@ -1,5 +1,3 @@
-@import url('../common/variables.less');
-@import url('../common/mixin.less');
 
 /*!
 Simple Grid
@@ -173,7 +171,7 @@ Author - Jeff Zhong
   margin-left: 8.33%
 }
 
-@media handheld, screen and (max-width: @screen-sm-min) {
+@media handheld, screen and (max-width: $screen-sm-min) {
   .grid {
     width: 100%;
     min-width: 0;
@@ -284,7 +282,7 @@ Author - Jeff Zhong
   }
 }
 
-@media handheld, only screen and (min-width: @screen-md-min) {
+@media handheld, only screen and (min-width: $screen-md-min) {
   .grid{
     max-width: none;
   }

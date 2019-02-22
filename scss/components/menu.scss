@@ -1,13 +1,9 @@
-@import url('../common/variables.less');
-@import url('../common/mixin.less');
 
 /*csslint adjoining-classes: false, box-model:false*/
 .menu {
-   -moz-box-sizing: border-box;
-   -webkit-box-sizing: border-box;
    box-sizing: border-box;
    letter-spacing: -3px;
-   background-color: @menu-bg;
+   background-color: $menu-bg;
 }
 
 .menu-fixed {
@@ -124,16 +120,16 @@
 /* misc default styling */
 .menu-heading {
     text-transform: uppercase;
-    color: @menu-heading-color;
+    color: $menu-heading-color;
 }
 
 .menu-link {
-    color: @menu-link-color;
-    background-color: @menu-link-bg;
+    color: $menu-link-color;
+    background-color: $menu-link-bg;
 }
 
 .menu-children {
-    background-color: @menu-child-bg;
+    background-color: $menu-child-bg;
 }
 
 .menu-link,
@@ -154,8 +150,8 @@
 .menu-active > .menu-link,
 .menu-link:hover,
 .menu-link:focus {
-    background-color: @menu-link-hover-bg;
-    color: @menu-link-hover-color;
+    background-color: $menu-link-hover-bg;
+    color: $menu-link-hover-color;
 }
 
 .menu-selected .menu-link,

@@ -1,0 +1,338 @@
+//
+// Variables
+// --------------------------------------------------
+
+//== Grid
+//
+//##
+$screen-sm-min:              768px;
+$screen-md-min:              1280px;
+
+//== Colors
+//
+//## Gray and brand colors.
+$gray-base:              #000;
+$gray-darker:            lighten($gray-base, 13.5%); // #222
+$gray-dark:              lighten($gray-base, 20%);   // #333
+$gray:                   lighten($gray-base, 33.5%); // #555
+$gray-light:             lighten($gray-base, 46.7%); // #777
+$gray-lighter:           lighten($gray-base, 93.5%); // #eee
+
+$brand-primary:         hsl(209, 100%, 45%);
+$brand-success:         hsl(134, 74%, 42%);
+$brand-info:            hsl(194, 70%, 56%);
+$brand-warning:         hsl(35, 84%, 61%);
+$brand-danger:          hsl(2, 64%, 58%);
+
+
+//== Global
+//** Background color for `<body>`.
+$body-bg:               #fff;
+//** Global text color on `<body>`.
+$text-color:            $gray-dark;
+//** Global textual link color.
+$link-color:            $brand-primary;
+$link-hover-color:      darken($link-color, 18%);
+$border-radius-base:    4px;
+
+
+//== Font
+//## Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base:        -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
+
+$font-size-base:          14px;
+$font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429; // 20/14
+$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
+
+//== Tables
+//
+//## Customizes the `.table` component with basic values, each used across all table variations.
+//** Padding for `<th>`s and `<td>`s.
+$table-bg:                      #fff;
+$table-cell-padding:            8px 16px;
+//** Background color used for `.table-striped`.
+$table-bg-odd:                  #f2f2f2;
+//** Border color for table and cell borders.
+$table-border-color:            #cbcbcb;
+// thead background-color
+$table-thead-bg:                #e0e0e0;
+// thead color
+$table-thead-color:             #000;
+
+
+//== Buttons
+//
+$btn-padding:                    0.5em 1em;
+
+$btn-default-color:              #333;
+$btn-default-bg:                 #E6E6E6;
+$btn-default-border:             darken($btn-default-bg, 5%);
+
+$btn-primary-color:              #fff;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             darken($btn-primary-bg, 5%);
+
+$btn-success-color:              #fff;
+$btn-success-bg:                 $brand-success;
+$btn-success-border:             darken($btn-success-bg, 5%);
+
+$btn-info-color:                 #fff;
+$btn-info-bg:                    $brand-info;
+$btn-info-border:                darken($btn-info-bg, 5%);
+
+$btn-warning-color:              #fff;
+$btn-warning-bg:                 $brand-warning;
+$btn-warning-border:             darken($btn-warning-bg, 5%);
+
+$btn-danger-color:               #fff;
+$btn-danger-bg:                  $brand-danger;
+$btn-danger-border:              darken($btn-danger-bg, 5%);
+
+$close-color:                 #000;
+$close-text-shadow:           0 1px 0 #fff;
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+$state-success-text:             hsl(121, 33%, 35%);
+$state-success-bg:               hsl(103, 44%, 89%);
+$state-success-border:           darken($state-success-bg, 5%);
+
+$state-info-text:                hsl(200, 49%, 38%);
+$state-info-bg:                  hsl(200, 65%, 91%);
+$state-info-border:              darken($state-info-bg, 5%);
+
+$state-warning-text:             hsl(38, 40%, 39%);
+$state-warning-bg:               hsl(50, 81%, 94%);
+$state-warning-border:           darken($state-warning-bg, 5%);
+
+$state-danger-text:              hsl(1, 44%, 46%);
+$state-danger-bg:                hsl(0, 43%, 91%);
+$state-danger-border:            darken($state-danger-bg, 5%);
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+
+$alert-padding:               15px;
+$alert-border-radius:         $border-radius-base;
+$alert-link-font-weight:      bold;
+
+$alert-success-bg:            $state-success-bg;
+$alert-success-text:          $state-success-text;
+$alert-success-border:        $state-success-border;
+
+$alert-info-bg:               $state-info-bg;
+$alert-info-text:             $state-info-text;
+$alert-info-border:           $state-info-border;
+
+$alert-warning-bg:            $state-warning-bg;
+$alert-warning-text:          $state-warning-text;
+$alert-warning-border:        $state-warning-border;
+
+$alert-danger-bg:             $state-danger-bg;
+$alert-danger-text:           $state-danger-text;
+$alert-danger-border:         $state-danger-border;
+
+//== Panels
+//
+//##
+
+$panel-bg:                    #fff;
+$panel-body-padding:          15px;
+$panel-heading-padding:       10px 15px;
+$panel-footer-padding:        $panel-heading-padding;
+$panel-border-radius:         $border-radius-base;
+
+//** Border color for elements within panels
+$panel-inner-border:          #ddd;
+$panel-footer-bg:             #f5f5f5;
+
+$panel-default-text:          $gray-dark;
+$panel-default-border:        #ddd;
+$panel-default-heading-bg:    #f5f5f5;
+
+$panel-primary-text:          #fff;
+$panel-primary-border:        $brand-primary;
+$panel-primary-heading-bg:    $brand-primary;
+
+$panel-success-text:          $state-success-text;
+$panel-success-border:        $state-success-border;
+$panel-success-heading-bg:    $state-success-bg;
+
+$panel-info-text:             $state-info-text;
+$panel-info-border:           $state-info-border;
+$panel-info-heading-bg:       $state-info-bg;
+
+$panel-warning-text:          $state-warning-text;
+$panel-warning-border:        $state-warning-border;
+$panel-warning-heading-bg:    $state-warning-bg;
+
+$panel-danger-text:           $state-danger-text;
+$panel-danger-border:         $state-danger-border;
+$panel-danger-heading-bg:     $state-danger-bg;
+
+
+//== Breadcrumbs
+//
+//##
+
+$breadcrumb-padding:  8px 16px;
+//** Breadcrumb background color
+$breadcrumb-bg:                 #f5f5f5;
+//** Breadcrumb text color
+$breadcrumb-color:              #ccc;
+//** Text color of current page in the breadcrumb
+$breadcrumb-active-color:       $gray-light;
+//** Textual separator for between breadcrumb elements
+$breadcrumb-separator:          "/";
+
+//== Form
+//
+//##
+$form-border-color:          #ccc;
+$form-focus-color:           hsl(201, 86%, 49%);
+$form-disabled-color:        hsl(187, 9%, 81%);
+$form-disabled-bg:           hsl(180, 8%, 92%);
+$form-invalid-color:         hsl(1, 45%, 50%);
+$form-invalid-border:        hsl(2, 81%, 55%);
+
+//== Pagination
+//
+//##
+
+$pagination-color:                     $link-color;
+$pagination-bg:                        #fff;
+$pagination-border:                    #ddd;
+
+$pagination-hover-color:               $link-hover-color;
+$pagination-hover-bg:                  $gray-lighter;
+$pagination-hover-border:              #ddd;
+
+$pagination-active-color:              #fff;
+$pagination-active-bg:                 $brand-primary;
+$pagination-active-border:             $brand-primary;
+
+$pagination-disabled-color:            $gray-light;
+$pagination-disabled-bg:               #fff;
+$pagination-disabled-border:           #ddd;
+
+//== Pager
+//
+//##
+$pager-color:                          $link-color;
+$pager-bg:                             $pagination-bg;
+$pager-border:                         $pagination-border;
+$pager-border-radius:                  15px;
+$pager-hover-bg:                       $pagination-hover-bg;
+$pager-active-bg:                      $pagination-active-bg;
+$pager-active-color:                   $pagination-active-color;
+$pager-disabled-color:                 $pagination-disabled-color;
+
+
+
+//== Menu
+//
+//##
+$menu-bg:                     #fff;
+$menu-heading-color:          #565d64;
+$menu-link-color:             #777;
+$menu-link-bg:                #fff;
+$menu-link-hover-color:       #777;     
+$menu-link-hover-bg:          #eee;     
+$menu-child-bg:               #fff;     
+
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+
+$zindex-navbar:            1000;
+$zindex-dropdown:          1000;
+$zindex-popover:           1060;
+$zindex-tooltip:           1070;
+$zindex-navbar-fixed:      1030;
+$zindex-modal-background:  1040;
+$zindex-modal:             1050;
+
+//== Modals
+//
+//##
+
+//** Padding applied to the modal body
+$modal-inner-padding:         15px;
+
+//** Padding applied to the modal title
+$modal-title-padding:         15px;
+//** Modal title line-height
+$modal-title-line-height:     $line-height-base;
+
+//** Background color of modal content area
+$modal-content-bg:            #fff;
+//** Modal content border color
+$modal-content-border-color:  hsla(0, 0%, 0%, 0.2);
+
+//** Modal backdrop background color
+$modal-backdrop-bg:           #000;
+//** Modal backdrop opacity
+$modal-backdrop-opacity:      .5;
+//** Modal header border color
+$modal-header-border-color:   #e5e5e5;
+//** Modal footer border color
+$modal-footer-border-color:   $modal-header-border-color;
+
+$modal-lg:                    900px;
+$modal-md:                    600px;
+$modal-sm:                    300px;
+
+
+//== Navs
+//
+//##
+
+//=== Shared nav styles
+$tab-link-padding:                     10px 15px;
+$tab-border-color:                     #ddd;
+$tab-link-hover-bg:                    $gray-lighter;
+$tab-link-hover-color:                 $gray;
+$tab-link-hover-border-color:          $gray-lighter;
+
+$tab-active-link-hover-bg:             $body-bg;
+$tab-active-link-hover-color:          $gray;
+$tab-active-link-hover-border-color:   #ddd;
+
+$tab-disabled-link-color:              $gray-light;
+$tab-disabled-link-hover-color:        $gray-light;
+
+//== Checkbox
+//
+//##
+
+$checkbox-width:                       20px;
+$checkbox-bg:                          $brand-primary;
+
+//== Switch
+//
+//##
+$switch-width:                         40px;
+$switch-height:                        25px;
+$switch-bg:                            $brand-primary;
+
+
+//== Radio
+//
+//##
+$radio-width:                          20px;
+$radio-bg:                             $brand-primary;
