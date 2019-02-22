@@ -238,16 +238,16 @@ $pager-active-color:                   $pagination-active-color;
 $pager-disabled-color:                 $pagination-disabled-color;
 
 
-
 //== Menu
 //
 //##
 $menu-bg:                     #fff;
-$menu-heading-color:          #565d64;
-$menu-link-color:             #777;
+$menu-heading-color:          $gray;
+$menu-link-color:             $gray-light;
 $menu-link-bg:                #fff;
-$menu-link-hover-color:       #265778;     
+$menu-link-hover-color:       darken($brand-primary,10%);     
 $menu-link-hover-bg:          #eee;     
+$menu-link-selected-color:    $gray-dark;     
 
 //-- Z-index master list
 //
