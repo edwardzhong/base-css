@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Form</title>
-    <link rel="stylesheet" href="../lib/raleway/raleway.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <style>
-        .main{padding: 20px;}
-    </style>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Form</title>
+  <link rel="stylesheet" href="../lib/raleway/raleway.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    .main {
+      padding: 20px;
+    }
+  </style>
 </head>
+
 <body>
-<div class="main">
-	<ol class="breadcrumb">
-		<li><a href="index.html">Home</a></li>
-		<li class="active">Form</li>
-	</ol>
-  <div class="panel panel-info">
-      <div class="panel-heading">
-        <h3 class="panel-title">默认表单</h3>
-      </div>
-  </div>
+  <div class="main">
+    <ol class="breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li class="active">Form</li>
+    </ol>
+    <h2>默认表单</h2>
     <form class="form">
       <fieldset>
-        <legend>A simple single line form</legend>
+        <legend>Single line form</legend>
         <input type="email" placeholder="Email">
         <input type="password" placeholder="Password">
 
@@ -34,13 +35,11 @@
         <button type="submit" class="button button-primary">登录</button>
       </fieldset>
     </form>
-  <div class="panel panel-info">
-      <div class="panel-heading">
-        <h3 class="panel-title">对齐式</h3>
-      </div>
-  </div>
+
+    <h2>对齐式表单</h2>
     <form class="form form-aligned">
       <fieldset>
+        <legend>Aligned form</legend>
         <div class="control-group">
           <label for="name">Username</label>
           <input id="name" type="text" placeholder="Username">
@@ -70,25 +69,56 @@
         </div>
       </fieldset>
     </form>
-  <div class="panel panel-info">
-      <div class="panel-heading">
-        <h3 class="panel-title">input分组</h3>
-      </div>
-  </div>
+    <h2>input分组表单</h2>
     <form class="form">
-    <fieldset class="group">
-      <input type="text" class="input-1-2" placeholder="Username">
+      <legend>Group form</legend>
+      <fieldset class="group">
+        <input type="text" class="input-1-2" placeholder="Username">
         <input type="text" class="input-1-2" placeholder="Password">
         <input type="email" class="input-1-2" placeholder="Email">
       </fieldset>
 
       <fieldset class="group">
-      <input type="text" class="input-1-2" placeholder="A title">
+        <input type="text" class="input-1-2" placeholder="A title">
         <textarea class="input-1-2" placeholder="Textareas work too"></textarea>
       </fieldset>
 
       <button type="submit" class="button input-1-2 button-primary">Sign in</button>
     </form>
+    <h2>input大小</h2>
+    <form class="form">
+        <input class="input-1" type="text" placeholder=".input-1"><br>
+        <input class="input-3-4" type="text" placeholder=".input-3-4"><br>
+        <input class="input-2-3" type="text" placeholder=".input-2-3"><br>
+        <input class="input-1-2" type="text" placeholder=".input-1-2"><br>
+        <input class="input-1-3" type="text" placeholder=".input-1-3"><br>
+        <input class="input-1-4" type="text" placeholder=".input-1-4"><br>
+     </form>
+    <h2>disabled & readonly & invalid</h2>
+    <form class="form">
+    <input type="text" placeholder="disabled" disabled>
+    <input type="text" placeholder="readonly" readonly>
+    <input type="text" class="invalid" placeholder="invalid">
+  </form>
+  <h2>radio & checkbox</h2>
+  <form class="form">
+      <label for="option-one" class="checkbox">
+          <input id="option-one" type="checkbox" value="">
+          Here's option one.
+      </label>
+  
+      <label for="option-two" class="radio">
+          <input id="option-two" type="radio" name="optionsRadios" value="option1" checked>
+          Here's a radio button. You can choose this one..
+      </label>
+  
+      <label for="option-three" class="radio">
+          <input id="option-three" type="radio" name="optionsRadios" value="option2">
+          ..Or this one!
+      </label>
+  </form>
+  
   </div>
 </body>
+
 </html>

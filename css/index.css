@@ -306,10 +306,10 @@ template {
   display: none; }
 
 /*!
-Pure v1.0.0
-Copyright 2017 Jeff Zhong!
+Base-css v1.0.0
+Copyright 2019 Jeff Zhong!
 Licensed under the MIT License.
-https://github.com/edwardzhong/pure/LICENSE.md
+https://github.com/edwardzhong/base-css/README.md
 */
 /* Base Extras
    ========================================================================== */
@@ -354,11 +354,11 @@ a {
 .show {
   display: block !important; }
 
-.clearfix:before, .button-group:before, .panel-body:before, .pager:before, .modal-header:before, .modal-footer:before, .clearfix:after, .button-group:after, .panel-body:after, .pager:after, .modal-header:after, .modal-footer:after {
+.clearfix:before, .button-group:before, .modal-header:before, .modal-footer:before, .panel-body:before, .pager:before, .clearfix:after, .button-group:after, .modal-header:after, .modal-footer:after, .panel-body:after, .pager:after {
   content: " ";
   display: table; }
 
-.clearfix:after, .button-group:after, .panel-body:after, .pager:after, .modal-header:after, .modal-footer:after {
+.clearfix:after, .button-group:after, .modal-header:after, .modal-footer:after, .panel-body:after, .pager:after {
   clear: both; }
 
 .fl {
@@ -1126,138 +1126,6 @@ so we can ignore the csslint warning.
   .form-aligned .controls {
     margin: 1.5em 0 0 0; } }
 
-/*csslint adjoining-classes: false, box-model:false*/
-.menu {
-  box-sizing: border-box;
-  letter-spacing: -3px;
-  background-color: #fff; }
-
-.menu-fixed {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 3; }
-
-.menu-list {
-  position: relative;
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-
-.menu-item {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  letter-spacing: 0; }
-
-.menu-link,
-.menu-heading {
-  display: block;
-  text-decoration: none;
-  white-space: nowrap;
-  letter-spacing: 0; }
-
-/* HORIZONTAL MENU */
-.menu-horizontal {
-  width: 100%;
-  white-space: nowrap;
-  /* Initial menus should be inline-block so that they are horizontal */
-  /* Horizontal Menus - show the dropdown arrow */ }
-  .menu-horizontal .menu-list {
-    display: inline-block; }
-  .menu-horizontal .menu-item,
-  .menu-horizontal .menu-heading {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
-    vertical-align: middle; }
-  .menu-horizontal .menu-children {
-    left: 0;
-    top: auto;
-    width: inherit; }
-  .menu-horizontal .menu-has-children > .menu-link:after {
-    content: "\25BE"; }
-
-/* Submenus should still be display: block; */
-.menu-item .menu-item {
-  display: block; }
-
-.menu-children {
-  display: none;
-  position: absolute;
-  left: 100%;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  z-index: 3; }
-
-.menu-allow-hover:hover > .menu-children,
-.active > .menu-children,
-.menu-active > .menu-children {
-  display: block;
-  position: absolute; }
-
-/* Vertical Menus - show the dropdown arrow */
-.menu-has-children > .menu-link:after {
-  padding-left: 0.5em;
-  content: "\25B8";
-  font-size: small; }
-
-/* scrollable menus */
-.menu-scrollable {
-  overflow-y: scroll;
-  overflow-x: hidden; }
-  .menu-scrollable .menu-list {
-    display: block; }
-
-.menu-horizontal.menu-scrollable {
-  white-space: nowrap;
-  overflow-y: hidden;
-  overflow-x: auto;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
-  /* a little extra padding for this style to allow for scrollbars */
-  padding: 0.5em 0; }
-  .menu-horizontal.menu-scrollable .menu-list {
-    display: inline-block; }
-  .menu-horizontal.menu-scrollable::-webkit-scrollbar {
-    display: none; }
-
-/* misc default styling */
-.menu-heading {
-  text-transform: uppercase;
-  color: #565d64; }
-
-.menu-link {
-  color: #777;
-  background-color: #fff; }
-
-.menu-children {
-  background-color: #fff; }
-
-.menu-link,
-.menu-disabled,
-.menu-heading {
-  padding: 0.5em 1em; }
-
-.menu-disabled {
-  opacity: 0.5; }
-
-.menu-disabled .menu-link:hover {
-  background-color: transparent; }
-
-.active > .menu-link,
-.menu-active > .menu-link,
-.menu-link:hover,
-.menu-link:focus {
-  background-color: #eee;
-  color: #777; }
-
-.menu-selected .menu-link,
-.menu-selected .menu-link:visited {
-  color: #000; }
-
 /* Panel
    ========================================================================== */
 .table {
@@ -1324,6 +1192,101 @@ striping:
 .table-justified {
   width: 100%;
   table-layout: fixed; }
+
+.modal-open {
+  overflow: hidden; }
+
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0; }
+  .modal.fade .modal-dialog {
+    transform: translate(0, -50%);
+    opacity: 0; }
+  .modal.in .modal-dialog {
+    transform: translate(0, 0);
+    opacity: 1; }
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+  transition: all 0.3s ease-in-out; }
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: 0; }
+
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+  transition: all 0.3s ease-in-out; }
+  .modal-backdrop.fade {
+    opacity: 0; }
+  .modal-backdrop.in {
+    opacity: 0.5; }
+
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5; }
+
+.modal-header .close {
+  margin-top: -2px; }
+
+.modal-title {
+  margin: 0;
+  line-height: 1.42857; }
+
+.modal-body {
+  position: relative;
+  padding: 15px; }
+
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5; }
+  .modal-footer .button + .button {
+    margin-left: 5px;
+    margin-bottom: 0; }
+  .modal-footer .button-group .button + .button {
+    margin-left: -1px; }
+  .modal-footer .button-block + .button-block {
+    margin-left: 0; }
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 600px;
+    margin: 30px auto; }
+  .modal-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
+  .modal-sm {
+    width: 300px; } }
+
+@media (min-width: 1280px) {
+  .modal-lg {
+    width: 900px; } }
 
 /* Breadcrumb
    ========================================================================== */
@@ -1602,100 +1565,137 @@ striping:
     border-color: #0077e6;
     cursor: default; }
 
-.modal-open {
-  overflow: hidden; }
+/*csslint adjoining-classes: false, box-model:false*/
+.menu {
+  box-sizing: border-box;
+  letter-spacing: -3px;
+  background-color: #fff; }
 
-.modal {
-  display: none;
-  overflow: hidden;
+.menu-fixed {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  z-index: 1050;
-  -webkit-overflow-scrolling: touch;
-  outline: 0; }
-  .modal.fade .modal-dialog {
-    transform: translate(0, -50%);
-    opacity: 0; }
-  .modal.in .modal-dialog {
-    transform: translate(0, 0);
-    opacity: 1; }
-
-.modal-open .modal {
-  overflow-x: hidden;
-  overflow-y: auto; }
-
-.modal-dialog {
-  position: relative;
-  width: auto;
-  margin: 10px;
-  transition: all 0.3s ease-in-out; }
-
-.modal-content {
-  position: relative;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  background-clip: padding-box;
-  outline: 0; }
-
-.modal-backdrop {
-  display: none;
-  position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1040;
-  background-color: #000;
-  transition: all 0.3s ease-in-out; }
-  .modal-backdrop.fade {
-    opacity: 0; }
-  .modal-backdrop.in {
-    opacity: 0.5; }
+  z-index: 3; }
 
-.modal-header {
-  padding: 15px;
-  border-bottom: 1px solid #e5e5e5; }
-
-.modal-header .close {
-  margin-top: -2px; }
-
-.modal-title {
+.menu-list {
+  position: relative;
+  list-style: none;
   margin: 0;
-  line-height: 1.42857; }
+  padding: 0; }
 
-.modal-body {
+.menu-item {
   position: relative;
-  padding: 15px; }
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  letter-spacing: 0; }
 
-.modal-footer {
-  padding: 15px;
-  text-align: right;
-  border-top: 1px solid #e5e5e5; }
-  .modal-footer .button + .button {
-    margin-left: 5px;
-    margin-bottom: 0; }
-  .modal-footer .button-group .button + .button {
-    margin-left: -1px; }
-  .modal-footer .button-block + .button-block {
-    margin-left: 0; }
+.menu-link,
+.menu-heading {
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0; }
 
-@media (min-width: 768px) {
-  .modal-dialog {
-    width: 600px;
-    margin: 30px auto; }
-  .modal-content {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
-  .modal-sm {
-    width: 300px; } }
+/* HORIZONTAL MENU */
+.menu-horizontal {
+  width: 100%;
+  white-space: nowrap;
+  /* Initial menus should be inline-block so that they are horizontal */
+  /* Horizontal Menus - show the dropdown arrow */ }
+  .menu-horizontal .menu-list {
+    display: inline-block; }
+  .menu-horizontal .menu-item,
+  .menu-horizontal .menu-heading {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: middle; }
+  .menu-horizontal .menu-children {
+    left: 0;
+    top: auto;
+    width: inherit; }
+  .menu-horizontal .menu-has-children > .menu-link:after {
+    content: "\25BE"; }
 
-@media (min-width: 1280px) {
-  .modal-lg {
-    width: 900px; } }
+/* Submenus should still be display: block; */
+.menu-item .menu-item {
+  display: block; }
+
+.menu-children {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 3; }
+
+.menu-allow-hover:hover > .menu-children,
+.active > .menu-children,
+.menu-active > .menu-children {
+  display: block;
+  position: absolute; }
+
+/* Vertical Menus - show the dropdown arrow */
+.menu-has-children > .menu-link:after {
+  padding-left: 0.5em;
+  content: "\25B8";
+  font-size: small; }
+
+/* scrollable menus */
+.menu-scrollable {
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  .menu-scrollable .menu-list {
+    display: block; }
+
+.menu-horizontal.menu-scrollable {
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  /* a little extra padding for this style to allow for scrollbars */
+  padding: 0.5em 0; }
+  .menu-horizontal.menu-scrollable .menu-list {
+    display: inline-block; }
+  .menu-horizontal.menu-scrollable::-webkit-scrollbar {
+    display: none; }
+
+/* misc default styling */
+.menu-heading {
+  text-transform: uppercase;
+  color: #565d64; }
+
+.menu-link {
+  color: #777;
+  background-color: #fff; }
+
+.menu-children {
+  background-color: #fff; }
+
+.menu-link,
+.menu-disabled,
+.menu-heading {
+  padding: 0.5em 1em; }
+
+.menu-disabled {
+  opacity: 0.5; }
+
+.menu-disabled .menu-link:hover {
+  background-color: transparent; }
+
+.active > .menu-link,
+.menu-active > .menu-link,
+.menu-link:hover,
+.menu-link:focus {
+  background-color: #eee;
+  color: #265778; }
+
+.menu-selected .menu-link,
+.menu-selected .menu-link:visited {
+  color: #265778; }
 
 .menu-tabs {
   position: relative;

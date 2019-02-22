@@ -15,10 +15,10 @@
 * table
 
 ### 使用
-* less/index.less选择要加载的模块
-* less/common/variables.less可以更改模块的样式
+* scss/index.scss选择要加载的模块
+* scss/common/variables.scss可以更改模块的样式
 
 ```bash
 npm install
-npm run build
+npm start
 ```

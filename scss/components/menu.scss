@@ -127,7 +127,7 @@
 }
 
 .menu-children {
-  background-color: $menu-child-bg;
+  background-color: $menu-link-bg;
 }
 
 .menu-link,
@@ -154,5 +154,5 @@
 
 .menu-selected .menu-link,
 .menu-selected .menu-link:visited {
-  color: #000;
+  color: $menu-link-hover-color;
 }
