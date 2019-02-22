@@ -1,15 +1,14 @@
 const { src, dest, watch, series } = require('gulp');
 const del = require('del');
-const less = require('gulp-less');
 const concatCss = require('gulp-concat-css');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cleanCSS = require('gulp-clean-css');
+const less = require('gulp-less');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const name = 'base';//生成文件名称
 sass.compiler = require('node-sass');
-
 
 function clean(cb) {
     return del(['./dist', './css'], cb);

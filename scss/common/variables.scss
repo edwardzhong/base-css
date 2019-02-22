@@ -270,6 +270,9 @@ $zindex-modal:             1050;
 //== Modals
 //
 //##
+$modal-lg:                    900px;
+$modal-md:                    600px;
+$modal-sm:                    300px;
 
 //** Padding applied to the modal body
 $modal-inner-padding:         15px;
@@ -293,10 +296,6 @@ $modal-header-border-color:   #e5e5e5;
 //** Modal footer border color
 $modal-footer-border-color:   $modal-header-border-color;
 
-$modal-lg:                    900px;
-$modal-md:                    600px;
-$modal-sm:                    300px;
-
 
 //== Navs
 //
@@ -319,7 +318,6 @@ $tab-disabled-link-hover-color:        $gray-light;
 //== Checkbox
 //
 //##
-
 $checkbox-width:                       20px;
 $checkbox-bg:                          $brand-primary;
 
