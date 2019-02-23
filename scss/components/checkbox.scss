@@ -1,81 +1,80 @@
 /* input radio
    ========================================================================== */
-   input[type="radio"].radio {
-    width: $radio-width;
-    height: 1px;
-    position: relative;
-    overflow: visible;
-    border: 0;
-    -webkit-appearance: none;
-    appearance: none;
-    outline: 0;
-    vertical-align: middle;
-    &:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: -10px;
-      width: max(16px,$radio-width);
-      height: max(16px,$radio-width);
-      border: 1px solid #dfdfdf;
-      border-radius: 50%;
-      user-select: none;
-      cursor: pointer;
-      font-size: 12px;
-      overflow: hidden;
-      color: #fff;
-    }
-    &:checked {
-      &:after {
-        content: "";
-        position: absolute;
-        top: -6px;
-        left: 4px;
-        width: $radio-width - 8;
-        height: $radio-width - 8;
-        border-radius: 50%;
-        background-color: $radio-bg;
-      }
-    }
+$rw: min(30px, max(18px, $radio-width));
+input[type="radio"].radio {
+  width: $rw;
+  height: 1px;
+  position: relative;
+  overflow: visible;
+  border: 0;
+  appearance: none;
+  outline: 0;
+  vertical-align: middle;
+  &:before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: -$rw/2;
+    width: $rw;
+    height: $rw;
+    line-height: 0.33;
+    border: 1px solid #dfdfdf;
+    text-align: center;
+    border-radius: 50%;
+    font-size: floor($rw * 1.8);
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+    color: #fff;
   }
+  &:checked:before{
+    content: "\2022";
+    color: $radio-bg;
+  }
+}
 
 /* input checkbox
    ========================================================================== */
+$cw: min(30px, max(18px, $checkbox-width));
 input[type="checkbox"] {
   &.checkbox {
-    font-family: "fontello";
+    // font-family: "fontello";
     width: $checkbox-width;
     height: 1px;
     position: relative;
     overflow: visible;
     border: 0;
-    -webkit-appearance: none;
     appearance: none;
     outline: 0;
     vertical-align: middle;
     &:before {
       content: "";
       position: absolute;
+      box-sizing: border-box;
       left: 0;
-      top: -10px;
-      width: $checkbox-width;
-      height: $checkbox-width;
-      line-height: $checkbox-width;
+      top: -$cw/2;
+      width: $cw;
+      height: $cw;
+
+      @if $cw > 20 {
+        line-height: 1.4;
+      } @else {
+        line-height: 1.3;
+      }
       text-align: center;
       border: 1px solid #dfdfdf;
       border-radius: 50%;
       user-select: none;
       cursor: pointer;
-      font-size: min(10px, $checkbox-width/2);
+      font-size: $cw/2 + 4px;
       overflow: hidden;
       color: #fff;
     }
-    &:checked {
-      &:before {
-        content: "\e828";
-        background-color: $checkbox-bg;
-        border-color: transparent;
-      }
+    &:checked:before {
+      content: "\2713";
+      background-color: $checkbox-bg;
+      border-color: transparent;
     }
   }
   /* 实现switch效果 */
@@ -111,7 +110,7 @@ input[type="checkbox"] {
       content: "";
       position: absolute;
       left: 0;
-      top: 1px;
+      top: 0.5px;
       width: $switch-height;
       height: $switch-height;
       border: 1px solid #dfdfdf;
@@ -128,7 +127,7 @@ input[type="checkbox"] {
         box-shadow: $switch-bg 0 0 0 16px inset;
       }
       &:after {
-        left: $switch-width - $switch-height + 1;
+        left: $switch-width - $switch-height + 1px;
       }
     }
   }

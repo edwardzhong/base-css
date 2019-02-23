@@ -22,7 +22,7 @@ function parseLess() {
 
 function parseScss(){
     return src('./scss/index.scss')
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sass().on('error', sass.logError))
     .pipe(dest('./css'));
 }
 
@@ -40,8 +40,8 @@ function css() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest('./dist'));
 }
-// series 从左至右依次串行执行任务
-// parallel 并行执行
+// series   从左至右依次串行执行任务
+// parallel 并行执行任务
 // watch('./less/**/*.less', series(parseLess, css));
 watch('./scss/**/*.scss', series(parseScss, css));
 exports.default = series(clean, parseScss, css);

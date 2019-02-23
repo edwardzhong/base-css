@@ -6,9 +6,7 @@ https://github.com/edwardzhong/base-css/README.md
 */
 /* Base Extras
    ========================================================================== */
-/**
- * Always hide an element when it has the `hidden` HTML attribute.
- */
+
 html {
   height: 100%;
   font-family: $font-family-base;
@@ -42,9 +40,10 @@ a {
   height: auto;
   display: block;
 }
-
-.hide,
-[hidden] {
+/**
+ * Always hide an element when it has the `hidden` HTML attribute.
+ */
+.hide {
   display: none !important;
 }
 .show {
