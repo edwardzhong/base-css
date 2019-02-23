@@ -30,7 +30,7 @@ function css() {
     return src(['css/index.css'])
         .pipe(postcss([
             autoprefixer({
-                browsers: ["last 2 version", "> 5%", "Firefox >= 20", "not ie <= 8"]//["last 2 version", "> .5%","ie 6-8"]
+                browsers: ["last 2 version", "> 5%", "Firefox >= 20", "ie >= 8"]//["last 2 version", "> .5%","ie 6-8","not ie <= 8"]
             })
         ]))
         .pipe(rename(name + '.css'))
