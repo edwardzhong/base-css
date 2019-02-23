@@ -20,23 +20,22 @@ function parseLess() {
         .pipe(dest('./css'));
 }
 
-function parseScss(){
+function parseScss() {
     return src('./scss/index.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(dest('./css'));
+        .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))//outputStyle: expanded,compact,compressed
+        .pipe(dest('./css'));
 }
 
 function css() {
     return src(['css/index.css'])
         .pipe(postcss([
             autoprefixer({
-                "browsers": ["last 2 version", "> 0.5%", "ie 6-8", "Firefox < 20"]
-                // "browsers": ["last 2 version", "> 0.1%"]
+                browsers: ["last 2 version", "> 5%", "Firefox >= 20", "not ie <= 8"]//["last 2 version", "> .5%","ie 6-8"]
             })
         ]))
         .pipe(rename(name + '.css'))
         .pipe(dest('./dist'))
-        .pipe(cleanCSS())//代替 gulp-minify-css
+        .pipe(cleanCSS({ compatibility: 'ie8' }))//压缩代码，兼容浏览器，优化代码
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest('./dist'));
 }
