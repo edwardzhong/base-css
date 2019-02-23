@@ -1,6 +1,6 @@
 const { src, dest, watch, series } = require('gulp');
 const del = require('del');
-const concatCss = require('gulp-concat-css');
+const concatCss = require('gulp-concat-css');//合并css
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cleanCSS = require('gulp-clean-css');
