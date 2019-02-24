@@ -44,8 +44,9 @@
 .button-hover,
 .button:hover,
 .button:focus {
+  opacity: .9;
   filter: alpha(opacity=90);
-  background-image: linear-gradient(transparent, hsla(0, 0%, 0%, 0.1) 40%, hsla(0, 0%, 0%, 0.15));
+  background-image: linear-gradient(transparent, hsla(0, 0%, 0%, 0.1) 40%, hsla(0, 0%, 0%, 0.2));
 }
 .button:focus {
   outline: 0;
@@ -65,7 +66,8 @@
 .button-disabled:active {
   border: none;
   background-image: none;
-  opacity: 0.4;
+  opacity: .4;
+  filter: alpha(opacity=40);
   cursor: not-allowed;
   box-shadow: none;
   pointer-events: none;

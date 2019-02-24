@@ -339,11 +339,8 @@ template {
   display: none;
 }
 
-/*!
-Base-css v1.0.0
-Copyright 2019 Jeff Zhong!
-Licensed under the MIT License.
-https://github.com/edwardzhong/base-css/README.md
+/*! 
+* Base-css v1.0.1 | MIT License | https://github.com/edwardzhong/base-css 
 */
 /* Base Extras
    ========================================================================== */
@@ -417,9 +414,8 @@ a:hover {
   box-sizing: border-box;
 }
 
-/*!
-Simple Grid
-Author - Jeff Zhong
+/*! 
+* Simple Grid v1.0.0 
 */
 [class*="grid"],
 [class*="col-"],
@@ -834,7 +830,7 @@ Author - Jeff Zhong
   box-sizing: border-box;
   font-family: inherit;
   font-size: 100%;
-  padding: 0.5em 1em;
+  padding: 0.6em 1em;
   color: #444;
   /* rgba not supported (IE 8) */
   color: rgba(0, 0, 0, 0.8);
@@ -869,8 +865,9 @@ Author - Jeff Zhong
 .button-hover,
 .button:hover,
 .button:focus {
+  opacity: .9;
   filter: alpha(opacity=90);
-  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.15));
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.2));
 }
 
 .button:focus {
@@ -892,7 +889,8 @@ Author - Jeff Zhong
 .button-disabled:active {
   border: none;
   background-image: none;
-  opacity: 0.4;
+  opacity: .4;
+  filter: alpha(opacity=40);
   cursor: not-allowed;
   box-shadow: none;
   pointer-events: none;
