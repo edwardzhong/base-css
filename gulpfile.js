@@ -28,11 +28,12 @@ function parseScss() {
 
 function css() {
     return src(['css/index.css'])
-        .pipe(postcss([
-            autoprefixer({
-                browsers: ["last 2 version", "> 5%", "Firefox >= 20", 'ie >= 8', 'iOS >= 6', 'Android >= 4']//["last 2 version", "> .5%","ie 6-8","not ie <= 8"]
-            })
-        ]))
+        .pipe(postcss(
+            // [
+            // autoprefixer({
+            //     browsers: ["last 2 version", "> 5%", "Firefox >= 20", 'ie >= 8', 'iOS >= 6', 'Android >= 4']//["last 2 version", "> .5%","ie 6-8","not ie <= 8"]
+            // })]
+        ))
         .pipe(rename(name + '.css'))
         .pipe(dest('./dist'))
         .pipe(cleanCSS({ compatibility: 'ie8' }))//压缩代码，兼容浏览器，优化代码
