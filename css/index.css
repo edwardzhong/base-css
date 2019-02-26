@@ -352,19 +352,6 @@ html {
   line-height: 1.42857;
   background-color: #fff;
   color: #555555;
-  font-size: 14px;
-  user-select: none;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
-  font-size-adjust: 100%;
-}
-
-[data-dpr="2"] html {
-  font-size: 28px;
-}
-
-[data-dpr="3"] html {
-  font-size: 42px;
 }
 
 body {
@@ -385,19 +372,6 @@ a {
 
 a:hover {
   color: #00478a;
-}
-
-select {
-  appearance: none;
-}
-
-input, textarea {
-  outline: none;
-  resize: none;
-}
-
-img, a {
-  -webkit-touch-callout: none;
 }
 
 /**
