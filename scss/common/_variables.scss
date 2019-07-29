@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 //== 是否生成手机端webapp 的 base.css
-$isWebapp: false;
+$isWebapp: true;
 
 //== Colors
 //
@@ -42,7 +42,7 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
 //** Background color for `<body>`.
 $body-bg:               #fff;
 //** Global text color on `<body>`.
-$text-color:            $gray;
+$text-color:            #525968;
 //** Global textual link color.
 $link-color:            $brand-primary;
 $link-hover-color:      darken($link-color, 18%);
