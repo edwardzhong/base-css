@@ -13,16 +13,16 @@
   "author": "Jeff Zhong",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^9.6.0",
-    "del": "^3.0.0",
-    "gulp": "^4.0.0",
+    "autoprefixer": "^9.6.1",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat-css": "^3.1.0",
     "gulp-postcss": "^8.0.0",
     "gulp-pug": "^4.0.1",
-    "gulp-rename": "^1.2.2",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.12.0"
   },
   "postcss": {
     "plugins": {
