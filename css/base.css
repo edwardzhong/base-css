@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Mixin */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -1415,4 +1416,161 @@ a.button-dark {
 .menu-tabs.justified > li > a {
   text-align: center;
   margin-right: 0;
+}
+
+/* input radio
+   ========================================================================== */
+input[type="radio"].radio {
+  width: 18px;
+  height: 1px;
+  position: relative;
+  overflow: visible;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  vertical-align: middle;
+}
+
+input[type="radio"].radio:before {
+  content: "";
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  left: 0;
+  top: -9px;
+  width: 18px;
+  height: 18px;
+  line-height: 0.33;
+  border: 1px solid #dfdfdf;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 32px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+  color: #fff;
+}
+
+input[type="radio"].radio:checked:before {
+  content: "\2022";
+  color: #0077e6;
+}
+
+/* input checkbox
+   ========================================================================== */
+input[type="checkbox"] {
+  /* 实现switch效果 */
+}
+
+input[type="checkbox"].checkbox {
+  width: 18px;
+  height: 1px;
+  position: relative;
+  overflow: visible;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  vertical-align: middle;
+}
+
+input[type="checkbox"].checkbox:before {
+  content: "";
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  left: 0;
+  top: -9px;
+  width: 18px;
+  height: 18px;
+  line-height: 1.3;
+  text-align: center;
+  border: 1px solid #dfdfdf;
+  border-radius: 50%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  font-size: 13px;
+  overflow: hidden;
+  color: #fff;
+}
+
+input[type="checkbox"].checkbox:checked:before {
+  content: "\2713";
+  background-color: #0077e6;
+  border-color: transparent;
+}
+
+input[type="checkbox"].switch {
+  width: 34px;
+  height: 18px;
+  position: relative;
+  overflow: visible;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  outline: 0;
+  vertical-align: middle;
+}
+
+input[type="checkbox"].switch:before {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 34px;
+  height: 18px;
+  border: 1px solid #dfdfdf;
+  border-radius: 18px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #fdfdfd;
+  -webkit-box-shadow: #dfdfdf 0 0 0 0 inset;
+          box-shadow: #dfdfdf 0 0 0 0 inset;
+  transition: border 0.4s, -webkit-box-shadow 0.4s, box-shadow 0.4s, background-color 1.2s;
+}
+
+input[type="checkbox"].switch:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #dfdfdf;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  -webkit-transition: left 0.2s;
+  transition: left 0.2s;
+}
+
+input[type="checkbox"].switch:checked:before {
+  border-color: #0077e6;
+  background-color: #0077e6;
+  -webkit-box-shadow: #0077e6 0 0 0 16px inset;
+          box-shadow: #0077e6 0 0 0 16px inset;
+}
+
+input[type="checkbox"].switch:checked:after {
+  left: 17px;
 }
