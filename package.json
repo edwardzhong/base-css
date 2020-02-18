@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "gulp",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "custom": "gulp custom"
   },
   "keywords": [
     "css"

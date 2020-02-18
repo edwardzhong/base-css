@@ -22,7 +22,14 @@ function scss() {
     .pipe(dest('dist'));
 }
 
+function custom() {
+  return src('./scss/custom.scss')
+    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError)) 
+    .pipe(dest('css'));
+}
+
 // series   从左至右依次串行执行任务
 // parallel 并行执行任务
 watch('./scss/**/*.scss', scss);
 exports.default = series(clean, scss);
+exports.custom = custom;
