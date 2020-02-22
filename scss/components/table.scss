@@ -3,7 +3,6 @@
 .table {
   /* Remove spacing between table cells (from Normalize.css) */
   border-collapse: collapse;
-  border-spacing: 0;
   empty-cells: show;
   border: 1px solid $table-border-color;
   background-color: $table-bg;

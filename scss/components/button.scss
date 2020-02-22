@@ -2,174 +2,190 @@
    ========================================================================== */
 
 .button {
-  /* Structure */
-  display: inline-block;
-  zoom: 1;
-  line-height: normal;
-  white-space: nowrap;
-  vertical-align: middle;
-  text-align: center;
-  cursor: pointer;
-  -webkit-user-drag: none;
-  user-select: none;
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: 100%;
-  padding: $btn-padding;
-  color: #444; /* rgba not supported (IE 8) */
-  color: hsla(0, 0%, 0%, 0.8); /* rgba supported */
-  border: 1px solid #999; /*IE 6/7/8*/
-  border: none hsla(0, 0%, 0%, 0); /*IE9 + everything else*/
-  background-color: $btn-default-bg;
-  text-decoration: none;
-  border-radius: 2px;
+	/* Structure */
+	display: inline-block;
+	box-sizing: border-box;
+	line-height: normal;
+	white-space: nowrap;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	-webkit-user-drag: none;
+	user-select: none;
+	font-family: inherit;
+	font-size: 100%;
+	padding: $btn-padding;
+	color: #444;
+	border: none hsla(0, 0%, 0%, 0);
+	background-color: $btn-default-bg;
+	text-decoration: none;
+	border-radius: 4px;
 }
 
 /* Firefox: Get rid of the inner focus border */
 .button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
+	padding: 0;
+	border: 0;
 }
 
 .button-group {
-  text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
-  .button {
-    letter-spacing: normal;
-    word-spacing: normal;
-    vertical-align: top;
-    text-rendering: auto;
-  }
+	text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+	.button {
+		letter-spacing: normal;
+		word-spacing: normal;
+		vertical-align: top;
+		text-rendering: auto;
+	}
 }
 
-.button-hover,
 .button:hover,
 .button:focus {
-  opacity: .9;
-  filter: alpha(opacity=90);
-  background-image: linear-gradient(transparent, hsla(0, 0%, 0%, 0.1) 40%, hsla(0, 0%, 0%, 0.2));
+	background-color: darken($btn-default-bg, 10);
+	// opacity: 0.9;
+	// filter: alpha(opacity=90);
+	// background-image: linear-gradient(transparent, hsla(0, 0%, 0%, 0.1) 40%, hsla(0, 0%, 0%, 0.2));
 }
 .button:focus {
-  outline: 0;
+	outline: 0;
 }
 .button.active,
-.button-active,
 .button:active {
-  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.15) inset, 0 0 6px hsla(0, 0%, 0%, 0.2) inset;
-  border-color: #000;
+	box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.15) inset, 0 0 6px hsla(0, 0%, 0%, 0.2) inset;
 }
 
 .button[disabled],
-.button.disabled,
-.button-disabled,
-.button-disabled:hover,
-.button-disabled:focus,
-.button-disabled:active {
-  border: none;
-  background-image: none;
-  opacity: .4;
-  filter: alpha(opacity=40);
-  cursor: not-allowed;
-  box-shadow: none;
-  pointer-events: none;
-}
-
-.button-hidden {
-  display: none;
+.button.disabled {
+	border: none;
+	background-image: none;
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+	cursor: not-allowed;
+	box-shadow: none;
+	pointer-events: none;
 }
 
 .button-block {
-  width: 100%;
-  display: block;
+	width: 100%;
+	display: block;
 }
 
 /* this is a blue */
 .button-primary,
 a.button-primary {
-  @include button-variant($btn-primary-color, $btn-primary-bg);
+	color: $btn-primary-color;
+	background-color: $btn-primary-bg;
+	&:hover,
+	&:focus {
+		background-color: darken($btn-primary-bg, 10);
+	}
 }
 
 /* this is a green */
 .button-success,
 a.button-success {
-  @include button-variant($btn-success-color, $btn-success-bg);
+	color: $btn-success-color;
+	background-color: $btn-success-bg;
+	&:hover,
+	&:focus {
+		background-color: darken($btn-success-bg, 10);
+	}
 }
 
 /* this is a maroon */
 .button-danger,
 a.button-danger {
-  @include button-variant($btn-danger-color, $btn-danger-bg);
+	color: $btn-danger-color;
+	background-color: $btn-danger-bg;
+	&:hover,
+	&:focus {
+		background-color: darken($btn-danger-bg, 10);
+	}
 }
 
 /* this is an orange */
 .button-warning,
 a.button-warning {
-  @include button-variant($btn-warning-color, $btn-warning-bg);
+	color: $btn-warning-color;
+	background-color: $btn-warning-bg;
+	&:hover,
+	&:focus {
+		background-color: darken($btn-warning-bg, 10);
+	}
 }
 
 /* this is a light blue */
 .button-info,
 a.button-info {
-  @include button-variant($btn-info-color, $btn-info-bg);
+	color: $btn-info-color;
+	background-color: $btn-info-bg;
+	&:hover,
+	&:focus {
+		background-color: darken($btn-info-bg, 10);
+	}
 }
 
 /* this is a dark gray */
 .button-dark,
 a.button-dark {
-  @include button-variant($btn-dark-color, $btn-dark-bg);
+	color: $btn-dark-color;
+	background-color: $btn-dark-bg;
+	&:hover,
+	&:focus {
+		background-color: darken($btn-dark-bg, 10);
+	}
 }
 
 .button-small {
-  font-size: 80%;
+	font-size: 80%;
 }
 
 .button-large {
-  font-size: 120%;
+	font-size: 120%;
 }
 
 /* Button Groups */
 .button-group {
-  @extend .clearfix;
-  .button {
-    float: left;
-    margin: 0;
-    border-radius: 0;
-    border-right: 1px solid #111; /* fallback color for rgba() for IE7/8 */
-    border-right: 1px solid hsla(0, 0%, 0%, 0.2);
-    &:first-child {
-      @include border-left-radius(3px);
-    }
-    &:last-child {
-      @include border-right-radius(3px);
-      border-right: none;
-    }
-  }
+	@extend .clearfix;
+	.button {
+		float: left;
+		margin: 0;
+		border-radius: 0;
+		border-right: 1px solid hsla(0, 0%, 0%, 0.2);
+		&:first-child {
+			@include border-left-radius(3px);
+		}
+		&:last-child {
+			@include border-right-radius(3px);
+			border-right: none;
+		}
+	}
 }
 
 .button-group-justified {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: separate;
-  .button {
-    display: table-cell;
-    float: none;
-  }
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: separate;
+	.button {
+		display: table-cell;
+		float: none;
+	}
 }
 
 .close {
-  float: right;
-  font-size: ($font-size-base * 1.5);
-  line-height: 1;
-  color: $close-color;
-  text-shadow: $close-text-shadow;
-  opacity: .2;
-  filter: alpha(opacity=20);
-  &:hover,
-  &:focus {
-    color: $close-color;
-    text-decoration: none;
-    cursor: pointer;
-    opacity: .5;
-    filter: alpha(opacity=50);
-  }
+	float: right;
+	font-size: ($font-size-base * 1.5);
+	line-height: 1;
+	color: $close-color;
+	text-shadow: $close-text-shadow;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+	&:hover,
+	&:focus {
+		color: $close-color;
+		text-decoration: none;
+		cursor: pointer;
+		opacity: 0.5;
+		filter: alpha(opacity=50);
+	}
 }

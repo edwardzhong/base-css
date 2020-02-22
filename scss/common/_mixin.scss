@@ -34,12 +34,6 @@
   }
 }
 
-// Button
-@mixin button-variant($color, $background) {
-  color: $color;
-  background-color: $background;
-}
-
 // Panels
 @mixin panel-variant($border, $heading-text-color, $heading-bg-color, $heading-border) {
   border-color: $border;
