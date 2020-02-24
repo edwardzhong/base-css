@@ -96,10 +96,10 @@ a.button-warning {
 }
 
 /* this is a light blue */
-.button-info,
-a.button-info {
-	color: $btn-info-color;
-	@include button-variant($btn-info-bg, 20);
+.button-secondary,
+a.button-secondary {
+	color: $btn-secondary-color;
+	@include button-variant($btn-secondary-bg, 20);
 }
 
 /* this is a dark gray */

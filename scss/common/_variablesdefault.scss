@@ -16,8 +16,8 @@ $gray-light:            lighten($gray-base, 46.7%); // #777
 $gray-lighter:          lighten($gray-base, 93.5%); // #eee
 
 $brand-primary:         hsl(209, 100%, 45%);
+$brand-secondary:       hsl(194, 70%, 56%);
 $brand-success:         hsl(134, 74%, 42%);
-$brand-info:            hsl(194, 70%, 56%);
 $brand-warning:         hsl(35, 84%, 61%);
 $brand-danger:          hsl(2, 64%, 58%);
 
@@ -71,9 +71,9 @@ $btn-success-color:              #fff;
 $btn-success-bg:                 $brand-success;
 $btn-success-border:             darken($btn-success-bg, 5%);
 
-$btn-info-color:                 #fff;
-$btn-info-bg:                    $brand-info;
-$btn-info-border:                darken($btn-info-bg, 5%);
+$btn-secondary-color:            #fff;
+$btn-secondary-bg:               $brand-secondary;
+$btn-secondary-border:           darken($btn-secondary-bg, 5%);
 
 $btn-warning-color:              #fff;
 $btn-warning-bg:                 $brand-warning;
@@ -108,9 +108,9 @@ $state-success-text:             hsl(121, 33%, 35%);
 $state-success-bg:               hsl(103, 44%, 89%);
 $state-success-border:           darken($state-success-bg, 5%);
 
-$state-info-text:                hsl(200, 49%, 38%);
-$state-info-bg:                  hsl(200, 65%, 91%);
-$state-info-border:              darken($state-info-bg, 5%);
+$state-secondary-text:           hsl(200, 49%, 38%);
+$state-secondary-bg:             hsl(200, 65%, 91%);
+$state-secondary-border:         darken($state-secondary-bg, 5%);
 
 $state-warning-text:             hsl(38, 40%, 39%);
 $state-warning-bg:               hsl(50, 81%, 94%);
@@ -180,9 +180,9 @@ $alert-success-bg:            $state-success-bg;
 $alert-success-text:          $state-success-text;
 $alert-success-border:        $state-success-border;
 
-$alert-info-bg:               $state-info-bg;
-$alert-info-text:             $state-info-text;
-$alert-info-border:           $state-info-border;
+$alert-secondary-bg:          $state-secondary-bg;
+$alert-secondary-text:        $state-secondary-text;
+$alert-secondary-border:      $state-secondary-border;
 
 $alert-warning-bg:            $state-warning-bg;
 $alert-warning-text:          $state-warning-text;
@@ -221,9 +221,9 @@ $panel-success-text:          $state-success-text;
 $panel-success-border:        $state-success-border;
 $panel-success-heading-bg:    $state-success-bg;
 
-$panel-info-text:             $state-info-text;
-$panel-info-border:           $state-info-border;
-$panel-info-heading-bg:       $state-info-bg;
+$panel-secondary-text:        $state-secondary-text;
+$panel-secondary-border:      $state-secondary-border;
+$panel-secondary-heading-bg:  $state-secondary-bg;
 
 $panel-warning-text:          $state-warning-text;
 $panel-warning-border:        $state-warning-border;
