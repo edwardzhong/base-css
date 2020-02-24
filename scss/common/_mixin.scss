@@ -1,77 +1,85 @@
 /* Mixin */
 @mixin font-dpr($font-size) {
-  font-size: $font-size;
-  [data-dpr="2"] & {
-      font-size: $font-size * 2;
-  }
-  [data-dpr="3"] & {
-      font-size: $font-size * 3;
-  }
+	font-size: $font-size;
+	[data-dpr="2"] & {
+		font-size: $font-size * 2;
+	}
+	[data-dpr="3"] & {
+		font-size: $font-size * 3;
+	}
 }
-//clearfix
+// Clearfix
 @mixin clearfix {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
 }
 
+// Button
+@mixin button-variant($bg-color, $percent: 10) {
+	background-color: $bg-color;
+	&:hover,
+	&:focus {
+    background-color: darken($bg-color, $percent);
+	}
+}
 // Alerts
 @mixin alert-variant($background, $border, $text-color) {
-  background-color: $background;
-  border-color: $border;
-  color: $text-color;
+	background-color: $background;
+	border-color: $border;
+	color: $text-color;
 
-  hr {
-    border-top-color: darken($border, 5%);
-  }
-  .alert-link {
-    color: darken($text-color, 10%);
-  }
+	hr {
+		border-top-color: darken($border, 5%);
+	}
+	.alert-link {
+		color: darken($text-color, 10%);
+	}
 }
 
 // Panels
 @mixin panel-variant($border, $heading-text-color, $heading-bg-color, $heading-border) {
-  border-color: $border;
+	border-color: $border;
 
-  & > .panel-heading {
-    color: $heading-text-color;
-    background-color: $heading-bg-color;
-    border-color: $heading-border;
+	& > .panel-heading {
+		color: $heading-text-color;
+		background-color: $heading-bg-color;
+		border-color: $heading-border;
 
-    + .panel-collapse > .panel-body {
-      border-top-color: $border;
-    }
-    .badge {
-      color: $heading-bg-color;
-      background-color: $heading-text-color;
-    }
-  }
-  & > .panel-footer {
-    + .panel-collapse > .panel-body {
-      border-bottom-color: $border;
-    }
-  }
+		+ .panel-collapse > .panel-body {
+			border-top-color: $border;
+		}
+		.badge {
+			color: $heading-bg-color;
+			background-color: $heading-text-color;
+		}
+	}
+	& > .panel-footer {
+		+ .panel-collapse > .panel-body {
+			border-bottom-color: $border;
+		}
+	}
 }
 
 //border-radius
 @mixin border-top-radius($radius) {
-  border-top-right-radius: $radius;
-  border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
+	border-top-left-radius: $radius;
 }
 @mixin border-right-radius($radius) {
-  border-bottom-right-radius: $radius;
-  border-top-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+	border-top-right-radius: $radius;
 }
 @mixin border-bottom-radius($radius) {
-  border-bottom-right-radius: $radius;
-  border-bottom-left-radius: $radius;
+	border-bottom-right-radius: $radius;
+	border-bottom-left-radius: $radius;
 }
 @mixin border-left-radius($radius) {
-  border-bottom-left-radius: $radius;
-  border-top-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+	border-top-left-radius: $radius;
 }

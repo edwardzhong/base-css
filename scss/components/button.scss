@@ -42,7 +42,6 @@
 .button:focus {
 	background-color: darken($btn-default-bg, 10);
 	// opacity: 0.9;
-	// filter: alpha(opacity=90);
 	// background-image: linear-gradient(transparent, hsla(0, 0%, 0%, 0.1) 40%, hsla(0, 0%, 0%, 0.2));
 }
 .button:focus {
@@ -58,7 +57,6 @@
 	border: none;
 	background-image: none;
 	opacity: 0.4;
-	filter: alpha(opacity=40);
 	cursor: not-allowed;
 	box-shadow: none;
 	pointer-events: none;
@@ -73,66 +71,42 @@
 .button-primary,
 a.button-primary {
 	color: $btn-primary-color;
-	background-color: $btn-primary-bg;
-	&:hover,
-	&:focus {
-		background-color: darken($btn-primary-bg, 10);
-	}
+	@include button-variant($btn-primary-bg);
 }
 
 /* this is a green */
 .button-success,
 a.button-success {
 	color: $btn-success-color;
-	background-color: $btn-success-bg;
-	&:hover,
-	&:focus {
-		background-color: darken($btn-success-bg, 10);
-	}
+	@include button-variant($btn-success-bg);
 }
 
 /* this is a maroon */
 .button-danger,
 a.button-danger {
 	color: $btn-danger-color;
-	background-color: $btn-danger-bg;
-	&:hover,
-	&:focus {
-		background-color: darken($btn-danger-bg, 10);
-	}
+	@include button-variant($btn-danger-bg, 20);
 }
 
 /* this is an orange */
 .button-warning,
 a.button-warning {
 	color: $btn-warning-color;
-	background-color: $btn-warning-bg;
-	&:hover,
-	&:focus {
-		background-color: darken($btn-warning-bg, 10);
-	}
+	@include button-variant($btn-warning-bg, 20);
 }
 
 /* this is a light blue */
 .button-info,
 a.button-info {
 	color: $btn-info-color;
-	background-color: $btn-info-bg;
-	&:hover,
-	&:focus {
-		background-color: darken($btn-info-bg, 10);
-	}
+	@include button-variant($btn-info-bg, 20);
 }
 
 /* this is a dark gray */
 .button-dark,
 a.button-dark {
 	color: $btn-dark-color;
-	background-color: $btn-dark-bg;
-	&:hover,
-	&:focus {
-		background-color: darken($btn-dark-bg, 10);
-	}
+	@include button-variant($btn-dark-bg);
 }
 
 .button-small {
@@ -179,13 +153,11 @@ a.button-dark {
 	color: $close-color;
 	text-shadow: $close-text-shadow;
 	opacity: 0.2;
-	filter: alpha(opacity=20);
 	&:hover,
 	&:focus {
 		color: $close-color;
 		text-decoration: none;
 		cursor: pointer;
 		opacity: 0.5;
-		filter: alpha(opacity=50);
 	}
 }
