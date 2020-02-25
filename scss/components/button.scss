@@ -1,6 +1,15 @@
 /* Button
    ========================================================================== */
 
+// mixin
+@mixin button-variant($bg-color, $percent: 10) {
+	background-color: $bg-color;
+	&:hover,
+	&:focus {
+		background-color: darken($bg-color, $percent);
+	}
+}
+
 .button {
 	/* Structure */
 	display: inline-block;
@@ -126,10 +135,12 @@ a.button-dark {
 		border-radius: 0;
 		border-right: 1px solid hsla(0, 0%, 0%, 0.2);
 		&:first-child {
-			@include border-left-radius(3px);
+			border-bottom-left-radius: 3px;
+			border-top-left-radius: 3px;
 		}
 		&:last-child {
-			@include border-right-radius(3px);
+			border-bottom-right-radius: 3px;
+			border-top-right-radius: 3px;
 			border-right: none;
 		}
 	}

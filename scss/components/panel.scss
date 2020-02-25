@@ -1,5 +1,30 @@
 /* Panel
    ========================================================================== */
+
+// mixin
+@mixin panel-variant($border, $heading-text-color, $heading-bg-color, $heading-border) {
+	border-color: $border;
+
+	& > .panel-heading {
+		color: $heading-text-color;
+		background-color: $heading-bg-color;
+		border-color: $heading-border;
+
+		+ .panel-collapse > .panel-body {
+			border-top-color: $border;
+		}
+		.badge {
+			color: $heading-bg-color;
+			background-color: $heading-text-color;
+		}
+	}
+	& > .panel-footer {
+		+ .panel-collapse > .panel-body {
+			border-bottom-color: $border;
+		}
+	}
+}
+
 // Base class
 .panel {
   margin-bottom: $line-height-computed;
@@ -19,7 +44,8 @@
 .panel-heading {
   padding: $panel-heading-padding;
   border-bottom: 1px solid transparent;
-  @include border-top-radius(($panel-border-radius - 1));
+  border-top-right-radius: $panel-border-radius - 1;
+	border-top-left-radius: $panel-border-radius - 1;
 }
 
 // Within heading, strip any `h*` tag of its default margins for spacing.
@@ -43,7 +69,8 @@
   padding: $panel-footer-padding;
   background-color: $panel-footer-bg;
   border-top: 1px solid $panel-inner-border;
-  @include border-bottom-radius(($panel-border-radius - 1));
+  border-bottom-right-radius: $panel-border-radius - 1;
+	border-bottom-left-radius: $panel-border-radius - 1;
 }
 
 // Contextual variations
