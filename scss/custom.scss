@@ -1,50 +1,276 @@
-.tab-page {
-	width: 300px;
-	nav {
-		display: flex;
-		border: 1px solid #3c9;
-		height: 40px;
-		line-height: 40px;
-		text-align: center;
-		h3 {
-			position: relative;
-			flex: 1;
-			background-color: #3c9;
-			color: #fff;
-			& + h3 {
-				border-left: 1px solid #fff;
-			}
-		}
-		input {
-			display: none;
-		}
-		label {
-			display: block;
-			width: 100%;
-			height: 100%;
-			cursor: pointer;
-		}
+// input
+.input {
+	height: 40px;
+	line-height: 20px;
+	padding: 8px;
+	border: 1px solid hsl(240, 6%, 83%);
+	border-radius: 4px;
+	background-color: #fff;
+	box-sizing: border-box;
+	font-size: 14px;
+	outline: none;
+	color: hsl(226, 12%, 34%);
+	transition: border-color 0.15s, background-color 0.15s;
+
+	&:hover {
+		border-color: hsl(240, 2%, 68%);
 	}
-	ul {
-		overflow: hidden;
-		scroll-behavior: smooth;
-		border: 1px solid #3c9;
-		border-top: none;
-		height: 100px;
-		li {
-			display: flex;
-			position: relative;
-			justify-content: center;
-			align-items: center;
-			height: 100%;
-			font-size: 20px;
-			color: #09f;
-		}
-		input {
-			position: absolute;
-			width: 0;
-			height: 0;
-			opacity: 0;
-		}
+	&:focus {
+		border-color: hsl(213, 83%, 54%);
 	}
+
+	&.error,
+	&:invalid {
+		border-color: hsl(0, 80%, 60%) !important;
+	}
+	&.disable,
+	&:disabled {
+		background-color: #f7f9fa;
+	}
+}
+textarea.input {
+	height: auto;
+	word-break: break-all;
+	vertical-align: top;
+	resize: none;
+	overflow: auto;
+}
+
+//button
+.button {
+	display: inline-block;
+	line-height: 20px;
+	font-size: 14px;
+	text-align: center;
+	color: #4c5161;
+	border-radius: 4px;
+	border: 1px solid #d0d0d5;
+	padding: 8px 16px;
+	min-width: 80px;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: center;
+	text-decoration: none;
+	box-sizing: border-box;
+	transition: border-color 0.15s, box-shadow 0.15s, opacity 0.15s;
+	font-family: inherit;
+	cursor: pointer;
+	overflow: visible;
+	/* Firefox: Get rid of the inner focus border */
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+	&:not(.disabled):not(:disabled):hover {
+		border-color: #ababaf;
+		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 0 0 100px rgba(0, 0, 0, 0.1);
+	}
+	&:not(.disabled):not(:disabled):active {
+		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 0 0 100px rgba(0, 0, 0, 0.1);
+	}
+	&:focus {
+		outline: none;
+	}
+	&.disabled,
+	&:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+}
+
+@mixin button-variant {
+	border: 0;
+	color: #fff;
+}
+
+.button-primary {
+	@include button-variant;
+	background-color: hsl(213, 83%, 54%);
+}
+
+.button-secondary {
+	@include button-variant;
+	background-color: hsl(194, 70%, 56%);
+}
+
+/* success button */
+.button-success {
+	@include button-variant;
+	background-color: hsl(155, 72%, 39%);
+}
+
+/* warning button */
+.button-warning,
+.button-warn {
+	@include button-variant;
+	background-color: hsl(38, 100%, 48%);
+}
+/* danger button */
+.button-danger,
+.button-error {
+	@include button-variant;
+	background-color: hsl(0, 80%, 60%);
+}
+
+// checkbox
+input[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	z-index: -1;
+}
+.checkbox {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid rgba(0, 0, 0, 0);
+	border-radius: 4px;
+	box-sizing: border-box;
+	box-shadow: inset 0 1px, inset 1px 0, inset -1px 0, inset 0 -1px;
+	background-color: #fff;
+	background-clip: content-box;
+	color: #d0d0d5;
+	transition: color 0.2s, background-color 0.1s;
+	user-select: none;
+	vertical-align: -5px;
+	overflow: hidden;
+	cursor: pointer;
+	// & + label {
+	// 	margin-left: 5px;
+	// }
+	:not(:disabled) + &:hover,
+	:disabled + & {
+		color: #ababaf;
+	}
+
+	:focus + & {
+		color: #2a80eb;
+	}
+	:focus + &:hover {
+		color: #0057c3;
+	}
+
+	:checked + & {
+		color: #2a80eb;
+		background-color: #2a80eb;
+	}
+
+	:checked:focus + &,
+	:checked + &:hover {
+		color: #0057c3;
+		background-color: #0057c3;
+	}
+	&::after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M920.185 224.838c-33.782-33.935-88.619-33.935-122.464 0L409.955 614.564 226.231 429.952c-33.782-33.935-88.68-33.935-122.461 0-33.784 33.997-33.784 89.108 0 123.044l244.925 246.118c33.782 33.998 88.68 33.998 122.463 0l449.028-451.201c33.843-33.967 33.843-89.048-.001-123.075z' fill='%23fff'/%3E%3C/svg%3E")
+			no-repeat center;
+		background-size: 12px 12px;
+		visibility: hidden;
+	}
+	:checked + &::after {
+		visibility: visible;
+	}
+
+	:disabled + & {
+		opacity: 0.38;
+	}
+	&.error {
+		color: #eb4646;
+	}
+}
+
+//radio
+input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	z-index: -1;
+}
+
+.radio {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #d0d0d5;
+	border-radius: 50%;
+	background-color: #fff;
+	box-sizing: border-box;
+	vertical-align: -0.5ex;
+	user-select: none;
+	transition: border-color 0.2s;
+	overflow: hidden;
+	// & + label {
+	// 	margin-left: 5px;
+	// }
+	:not(:disabled) + &:hover {
+		border-color: #ababaf;
+	}
+	:focus + & {
+		border-color: #2a80eb;
+	}
+	&::before {
+		content: "";
+		display: block;
+		width: 10px;
+		height: 10px;
+		margin: 4px auto 0;
+		border-radius: 50%;
+		background-color: #2a80eb;
+		visibility: hidden;
+	}
+
+	:checked + &::before {
+		visibility: visible;
+	}
+
+	:disabled + & {
+		border-color: #ababaf;
+		opacity: 0.38;
+	}
+
+	&.error {
+		border-color: #eb4646;
+	}
+}
+
+//dialog
+.back-drop {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	border: 0;
+	background-color: hsla(0, 0, 0%, 0.8);
+	text-align: center;
+	color: #4c5161;
+	font-size: 14px;
+	white-space: nowrap;
+	overflow: auto;
+	z-index: 19;
+}
+
+.dialog {
+	position: relative;
+	display: inline-block;
+	margin: 120px 0 30px;
+	text-align: left;
+	min-width: 400px;
+	border-radius: 4px;
+	background-color: #f7f9fa;
+	vertical-align: middle;
+	white-space: normal;
+	outline: none;
+}
+.dialog-body {
+	min-height: 40px;
+	padding: 20px;
 }

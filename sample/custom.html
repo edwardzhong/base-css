@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Custom</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <style>
+        .main{padding: 20px;}
+        .wrap{
+          padding: 10px 0;
+        }
+      </style>
+</head>
+<body>
+<div class="main">
+	<ol class="breadcrumb">
+		<li><a href="index.html">Home</a></li>
+		<li class="active">Custom</li>
+	</ol>
+    <h3>button</h3>
+      <div class="wrap">
+        <button class="button">default Button</button>
+        <a class="button disabled" href="#">Disabled Button</a>
+        <button class="button button-primary" disabled>Active Button</button>
+      </div>
+      <div class="wrap">
+        <a class="button button-primary" href="#">Primary Button</a>
+        <button class="button button-secondary">Secondary Button</button>
+        <button class="button button-success">Success Button</button>
+        <button class="button button-danger">danger Button</button>
+        <button class="button button-warning">warning Button</button>
+      </div>
+    <h3>input</h3>
+    <div class="wrap">
+      <input type="text" class="input" placeholder="default">
+    </div>
+    <div class="wrap">
+      <input type="text" class="input" placeholder="disabled" disabled>
+    </div>
+    <div class="wrap">
+      <textarea name="txt" id="txt" cols="30" rows="5" class="input error" placeholder="textarea"></textarea>
+    </div>
+    <h3>checkbox</h3>
+     <div class="wrap">
+      <input type="checkbox" name="cb" id="cb" >
+      <label for="cb" class="checkbox"></label>
+      <label for="cb">aaa</label>
+
+      <input type="checkbox" name="cb" id="cb2" >
+      <label for="cb2" class="checkbox"></label>
+      <label for="cb2">bbb</label>
+     </div>
+     <h3>radio</h3>
+     <div class="wrap">
+      <input type="radio" name="rd" id="rd" >
+      <label for="rd" class="radio"></label>
+      <label for="rd">选项一</label>
+      <input type="radio" name="rd" id="rd2" >
+      <label for="rd2" class="radio"></label>
+      <label for="rd2">选项二</label>
+     </div>
+     <h3>dialog</h3>
+     <div class="wrap">
+       <div class="back-drop">
+         <div class="dialog">
+           <div class="dialog-body">
+             ok
+           </div>
+         </div>
+       </div>
+     </div>
+</body>
+</html>
