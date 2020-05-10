@@ -10,6 +10,7 @@
 	font-size: 14px;
 	outline: none;
 	color: hsl(226, 12%, 34%);
+	-webkit-appearance: none;
 	transition: border-color 0.15s, background-color 0.15s;
 
 	&:hover {
