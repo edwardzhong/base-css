@@ -12,6 +12,7 @@ $black: hsl(213, 9%, 24%);
 $fontSize: 14px;
 $borderRadius: 4px;
 $checkboxSize: 20px;
+$dialogzIndex: 99;
 
 @mixin btn-variant {
 	border: 0;
@@ -414,7 +415,7 @@ input[type="radio"] {
 	white-space: nowrap;
 	overflow: auto;
 	visibility: hidden;
-	z-index: 99;
+	z-index: dialogzIndex;
 	opacity: 0;
 	transition: all 0.3s ease-in-out;
 	&.show {
