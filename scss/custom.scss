@@ -1,6 +1,4 @@
-$fontColor: hsl(226, 12%, 34%);
-$borderColor: hsl(240, 6%, 83%);
-// $borderColorHover: hsl(240, 2%, 68%);
+
 $primary: hsl(213, 83%, 54%);
 // $primaryHover:hsl(213, 100%, 38%);
 $secondary: hsl(194, 70%, 56%);
@@ -9,6 +7,9 @@ $warn: hsl(38, 100%, 48%);
 $error: hsl(0, 80%, 60%);
 $black: hsl(213, 9%, 24%);
 
+$fontColor: hsl(226, 12%, 34%);
+$borderColor: hsl(240, 6%, 83%);
+// $borderColorHover: hsl(240, 2%, 68%);
 $fontSize: 14px;
 $borderRadius: 4px;
 $checkboxSize: 20px;
@@ -543,5 +544,30 @@ input[type="radio"] {
 	}
 	66% {
 		transform: translateY(-1em);
+	}
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+	thead tr {
+		background-color: #aaa;
+		height: 40px;
+		color: #fff;
+		font-size: 16px;
+	}
+	tbody tr {
+		color: #666;
+		font-size: $fontSize;
+		&:nth-child(even) {
+			background-color: #fafafa;
+		}
+		&:hover {
+			background-color: hsl(160, 30%, 95%);
+		}
+	}
+	td {
+		padding: 5px 10px;
 	}
 }
