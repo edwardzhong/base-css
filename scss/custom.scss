@@ -1,32 +1,53 @@
+$fontColor: hsl(226, 12%, 34%);
+$borderColor: hsl(240, 6%, 83%);
+// $borderColorHover: hsl(240, 2%, 68%);
+
+$primary: hsl(213, 83%, 54%);
+// $primaryHover:hsl(213, 100%, 38%);
+$secondary: hsl(194, 70%, 56%);
+$succ: hsl(155, 72%, 39%);
+$warn: hsl(38, 100%, 48%);
+$error: hsl(0, 80%, 60%);
+
+$black: hsl(213, 9%, 24%);
+
+$borderRadius: 4px;
+$checkboxSize: 20px;
+
+@mixin btn-variant {
+	border: 0;
+	color: #fff;
+}
+
 // input
 .input {
 	height: 40px;
 	line-height: 20px;
 	padding: 8px;
-	border: 1px solid hsl(240, 6%, 83%);
-	border-radius: 4px;
+	border: 1px solid $borderColor;
+	border-radius: $borderRadius;
 	background-color: #fff;
 	box-sizing: border-box;
 	font-size: 14px;
 	outline: none;
-	color: hsl(226, 12%, 34%);
+	color: $fontColor;
 	-webkit-appearance: none;
 	transition: border-color 0.15s, background-color 0.15s;
 
 	&:hover {
-		border-color: hsl(240, 2%, 68%);
+		border-color: darken(desaturate($borderColor, 4%), 20%);
 	}
 	&:focus {
-		border-color: hsl(213, 83%, 54%);
+		border-color: $primary;
 	}
 
 	&.error,
 	&:invalid {
-		border-color: hsl(0, 80%, 60%) !important;
+		border-color: $error !important;
 	}
 	&.disable,
 	&:disabled {
-		background-color: #f7f9fa;
+		background-color: hsl(200, 23%, 97%);
 	}
 }
 textarea.input {
@@ -38,14 +59,14 @@ textarea.input {
 }
 
 //button
-.button {
+.btn {
 	display: inline-block;
-	line-height: 20px;
+	// line-height: 20px;
 	font-size: 14px;
 	text-align: center;
-	color: #4c5161;
-	border-radius: 4px;
-	border: 1px solid #d0d0d5;
+	color: $fontColor;
+	border-radius: $borderRadius;
+	border: 1px solid $borderColor;
 	padding: 8px 16px;
 	min-width: 80px;
 	background-color: #fff;
@@ -63,7 +84,7 @@ textarea.input {
 		border: 0;
 	}
 	&:not(.disabled):not(:disabled):hover {
-		border-color: #ababaf;
+		border-color: darken(desaturate($borderColor, 4%), 20%);
 		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 0 0 100px rgba(0, 0, 0, 0.1);
 	}
 	&:not(.disabled):not(:disabled):active {
@@ -79,38 +100,33 @@ textarea.input {
 	}
 }
 
-@mixin button-variant {
-	border: 0;
-	color: #fff;
+.btn-primary {
+	@include btn-variant;
+	background-color: $primary;
 }
 
-.button-primary {
-	@include button-variant;
-	background-color: hsl(213, 83%, 54%);
-}
-
-.button-secondary {
-	@include button-variant;
-	background-color: hsl(194, 70%, 56%);
+.btn-secondary {
+	@include btn-variant;
+	background-color: $secondary;
 }
 
 /* success button */
-.button-success {
-	@include button-variant;
-	background-color: hsl(155, 72%, 39%);
+.btn-success {
+	@include btn-variant;
+	background-color: $succ;
 }
 
 /* warning button */
-.button-warning,
-.button-warn {
-	@include button-variant;
-	background-color: hsl(38, 100%, 48%);
+.btn-warning,
+.btn-warn {
+	@include btn-variant;
+	background-color: $warn;
 }
 /* danger button */
-.button-danger,
-.button-error {
-	@include button-variant;
-	background-color: hsl(0, 80%, 60%);
+.btn-danger,
+.btn-error {
+	@include btn-variant;
+	background-color: $error;
 }
 
 // checkbox
@@ -124,15 +140,15 @@ input[type="checkbox"] {
 }
 .checkbox {
 	display: inline-block;
-	width: 20px;
-	height: 20px;
+	width: $checkboxSize;
+	height: $checkboxSize;
 	border: 1px solid rgba(0, 0, 0, 0);
-	border-radius: 4px;
+	border-radius: $borderRadius;
 	box-sizing: border-box;
 	box-shadow: inset 0 1px, inset 1px 0, inset -1px 0, inset 0 -1px;
 	background-color: #fff;
 	background-clip: content-box;
-	color: #d0d0d5;
+	color: $borderColor;
 	transition: color 0.2s, background-color 0.1s;
 	user-select: none;
 	vertical-align: -5px;
@@ -143,25 +159,25 @@ input[type="checkbox"] {
 	// }
 	:not(:disabled) + &:hover,
 	:disabled + & {
-		color: #ababaf;
+		color: darken(desaturate($borderColor, 4%), 20%);
 	}
 
 	:focus + & {
-		color: #2a80eb;
+		color: $primary;
 	}
 	:focus + &:hover {
-		color: #0057c3;
+		color: darken(saturate($primary, 27%), 16%);
 	}
 
 	:checked + & {
-		color: #2a80eb;
-		background-color: #2a80eb;
+		color: $primary;
+		background-color: $primary;
 	}
 
 	:checked:focus + &,
 	:checked + &:hover {
-		color: #0057c3;
-		background-color: #0057c3;
+		color: darken(saturate($primary, 27%), 16%);
+		background-color: darken(saturate($primary, 27%), 16%);
 	}
 	&::after {
 		content: "";
@@ -181,11 +197,11 @@ input[type="checkbox"] {
 		opacity: 0.38;
 	}
 	&.error {
-		color: #eb4646;
+		color: $error;
 	}
 }
 
-//radio
+// radio
 input[type="radio"] {
 	position: absolute;
 	opacity: 0;
@@ -199,7 +215,7 @@ input[type="radio"] {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	border: 1px solid #d0d0d5;
+	border: 1px solid $borderColor;
 	border-radius: 50%;
 	background-color: #fff;
 	box-sizing: border-box;
@@ -211,10 +227,10 @@ input[type="radio"] {
 	// 	margin-left: 5px;
 	// }
 	:not(:disabled) + &:hover {
-		border-color: #ababaf;
+		border-color: darken(desaturate($borderColor, 4%), 20%);
 	}
 	:focus + & {
-		border-color: #2a80eb;
+		border-color: $primary;
 	}
 	&::before {
 		content: "";
@@ -223,7 +239,7 @@ input[type="radio"] {
 		height: 10px;
 		margin: 4px auto 0;
 		border-radius: 50%;
-		background-color: #2a80eb;
+		background-color: $primary;
 		visibility: hidden;
 	}
 
@@ -232,12 +248,153 @@ input[type="radio"] {
 	}
 
 	:disabled + & {
-		border-color: #ababaf;
+		border-color: darken(desaturate($borderColor, 4%), 20%);
 		opacity: 0.38;
 	}
 
 	&.error {
-		border-color: #eb4646;
+		border-color: $error;
+	}
+}
+
+// switch
+.switch {
+	display: inline-block;
+	width: 44px;
+	height: 26px;
+	border: 2px solid;
+	border-radius: 26px;
+	background-color: currentColor;
+	box-sizing: border-box;
+	color: hsl(221, 12%, 75%);
+	font-size: 0;
+	transition: all 0.2s;
+	cursor: pointer;
+	/* UE better */
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	&::before {
+		content: "";
+		display: block;
+		width: 22px;
+		height: 22px;
+		border-radius: 50%;
+		background-color: #fff;
+		transition: margin-left 0.2s;
+	}
+	:active + &::before {
+		box-shadow: inset 1px 1px 1px hsla(0, 0%, 0%, 0.1);
+	}
+
+	:checked + & {
+		color: $primary;
+	}
+
+	:checked + &::before {
+		margin-left: 18px;
+	}
+
+	:disabled + & {
+		opacity: 0.38;
+		cursor: default;
+	}
+
+	:focus + &,
+	&:hover {
+		color: hsl(219, 12%, 67%);
+	}
+
+	:checked:focus + &,
+	:checked + &:hover {
+		color: darken(saturate($primary, 27%), 16%);
+	}
+
+	:disabled + &:hover {
+		color: hsl(221, 12%, 75%);
+	}
+
+	:checked:disabled + &:hover {
+		color: $primary;
+	}
+}
+
+// tips
+.tips[data-title] {
+	text-indent: 0;
+	position: relative;
+	overflow: visible;
+	&::before,
+	&::after {
+		position: absolute;
+		left: 50%;
+		-ms-pointer-events: none;
+		pointer-events: none;
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+		visibility: hidden;
+	}
+
+	&::before {
+		content: attr(data-title);
+		bottom: calc(100% + 12px);
+		max-width: 250px;
+		padding: 6px 10px;
+		line-height: 18px;
+		border-radius: 3px;
+		background-color: $black;
+		text-align: left;
+		color: #fff;
+		font-size: 12px;
+		font-style: normal;
+		white-space: nowrap;
+	}
+
+	&::after {
+		content: "";
+		border: 6px solid transparent;
+		border-top-color: $black;
+		bottom: 100%;
+	}
+
+	&:hover::before,
+	&:hover::after,
+	&:focus::before,
+	&:focus::after {
+		transition: visibility 0.1s 0.1s;
+		visibility: visible;
+	}
+
+	&:hover {
+		outline: none;
+	}
+
+	// 朝下的情况
+	&.bottom::before {
+		bottom: auto;
+		top: calc(100% + 12px);
+	}
+
+	&.bottom::after {
+		border-color: transparent transparent $black;
+		bottom: auto;
+		top: 100%;
+	}
+
+	// 朝右的情况
+	&.right::before {
+		top: auto;
+		bottom: auto;
+		left: calc(100% + 12px);
+		transform: translate(0);
+	}
+	&.right::after {
+		top: calc(50% - 3px);
+		bottom: auto;
+		left: calc(100%);
+		transform: translate(0);
+		border-color: transparent $black transparent transparent;
 	}
 }
 
@@ -252,7 +409,7 @@ input[type="radio"] {
 	border: 0;
 	background-color: hsla(0, 0, 0%, 0.5);
 	text-align: center;
-	color: #4c5161;
+	color: $fontColor;
 	font-size: 14px;
 	white-space: nowrap;
 	overflow: auto;
@@ -272,8 +429,8 @@ input[type="radio"] {
 	margin: 120px 0 30px;
 	text-align: left;
 	min-width: 400px;
-	border-radius: 4px;
-	background-color: #f7f9fa;
+	border-radius: $borderRadius;
+	background-color: #fff;
 	vertical-align: middle;
 	white-space: normal;
 	outline: none;

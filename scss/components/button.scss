@@ -10,7 +10,7 @@
 	}
 }
 
-.button {
+.btn {
 	display: inline-block;
 	box-sizing: border-box;
 	line-height: normal;
@@ -31,14 +31,14 @@
 }
 
 /* Firefox: Get rid of the inner focus border */
-.button::-moz-focus-inner {
+.btn::-moz-focus-inner {
 	padding: 0;
 	border: 0;
 }
 
-.button-group {
+.btn-group {
 	text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
-	.button {
+	.btn {
 		letter-spacing: normal;
 		word-spacing: normal;
 		vertical-align: top;
@@ -46,22 +46,22 @@
 	}
 }
 
-.button:hover,
-.button:focus {
+.btn:hover,
+.btn:focus {
 	background-color: darken($btn-default-bg, 10);
 	// opacity: 0.9;
 	// background-image: linear-gradient(transparent, hsla(0, 0%, 0%, 0.1) 40%, hsla(0, 0%, 0%, 0.2));
 }
-.button:focus {
+.btn:focus {
 	outline: 0;
 }
-.button.active,
-.button:active {
+.btn.active,
+.btn:active {
 	box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.15) inset, 0 0 6px hsla(0, 0%, 0%, 0.2) inset;
 }
 
-.button[disabled],
-.button.disabled {
+.btn[disabled],
+.btn.disabled {
 	border: none;
 	background-image: none;
 	opacity: 0.4;
@@ -70,65 +70,65 @@
 	pointer-events: none;
 }
 
-.button-block {
+.btn-block {
 	width: 100%;
 	display: block;
 }
 
 /* this is a blue */
-.button-primary,
-a.button-primary {
+.btn-primary,
+a.btn-primary {
 	color: $btn-primary-color;
 	@include button-variant($btn-primary-bg);
 }
 
 /* this is a green */
-.button-success,
-a.button-success {
+.btn-success,
+a.btn-success {
 	color: $btn-success-color;
 	@include button-variant($btn-success-bg);
 }
 
 /* this is a maroon */
-.button-danger,
-a.button-danger {
+.btn-danger,
+a.btn-danger {
 	color: $btn-danger-color;
 	@include button-variant($btn-danger-bg, 20);
 }
 
 /* this is an orange */
-.button-warning,
-a.button-warning {
+.btn-warning,
+a.btn-warning {
 	color: $btn-warning-color;
 	@include button-variant($btn-warning-bg, 20);
 }
 
 /* this is a light blue */
-.button-secondary,
-a.button-secondary {
+.btn-secondary,
+a.btn-secondary {
 	color: $btn-secondary-color;
 	@include button-variant($btn-secondary-bg, 20);
 }
 
 /* this is a dark gray */
-.button-dark,
-a.button-dark {
+.btn-dark,
+a.btn-dark {
 	color: $btn-dark-color;
 	@include button-variant($btn-dark-bg);
 }
 
-.button-small {
+.btn-small {
 	font-size: 80%;
 }
 
-.button-large {
+.btn-large {
 	font-size: 120%;
 }
 
 /* Button Groups */
-.button-group {
+.btn-group {
 	@extend .clearfix;
-	.button {
+	.btn {
 		float: left;
 		margin: 0;
 		border-radius: 0;
@@ -145,12 +145,12 @@ a.button-dark {
 	}
 }
 
-.button-group-justified {
+.btn-group-justified {
 	display: table;
 	width: 100%;
 	table-layout: fixed;
 	border-collapse: separate;
-	.button {
+	.btn {
 		display: table-cell;
 		float: none;
 	}

@@ -30,6 +30,6 @@ function custom() {
 
 // series   从左至右依次串行执行任务
 // parallel 并行执行任务
-watch('./scss/**/*.scss', scss);
+watch('./scss/**/*.scss', custom);
 exports.default = series(clean, scss);
 exports.custom = custom;

@@ -15,6 +15,14 @@
       .wrap {
         padding: 10px 0;
       }
+      .tips{
+        padding: 4px 10px;
+        font-size:14px;
+        font-style: normal;
+        border:1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -25,16 +33,16 @@
       </ol>
       <h3>button</h3>
       <div class="wrap">
-        <button class="button">default Button</button>
-        <a class="button disabled" href="#">Disabled Button</a>
-        <button class="button button-primary" disabled>Active Button</button>
+        <button class="btn">default Button</button>
+        <a class="btn disabled" href="#">Disabled Button</a>
+        <button class="btn btn-primary" disabled>Active Button</button>
       </div>
       <div class="wrap">
-        <a class="button button-primary" href="#">Primary Button</a>
-        <button class="button button-secondary">Secondary Button</button>
-        <button class="button button-success">Success Button</button>
-        <button class="button button-danger">danger Button</button>
-        <button class="button button-warning">warning Button</button>
+        <a class="btn btn-primary" href="#">Primary Button</a>
+        <button class="btn btn-secondary">Secondary Button</button>
+        <button class="btn btn-success">Success Button</button>
+        <button class="btn btn-danger">danger Button</button>
+        <button class="btn btn-warning">warning Button</button>
       </div>
       <h3>input</h3>
       <div class="wrap">
@@ -65,9 +73,20 @@
         <label for="rd2" class="radio"></label>
         <label for="rd2">选项二</label>
       </div>
+      <h3>switch</h3>
+      <div class="wrap">
+        <input type="checkbox" id="switch"><label class="switch" for="switch"></label>
+        <input type="checkbox" id="switch3" checked disabled><label class="switch" for="switch3"></label>
+      </div>
+      <h3>tip</h3>
+      <div class="wrap">
+        <i class="tips" data-title="正常提示" title="正常提示">正常提示</i>
+        <i class="tips bottom" data-title="朝下提示" title="朝下提示">朝下提示</i>
+        <i class="tips right" data-title="朝右提示" title="朝右提示">右边提示</i>
+      </div>
       <h3>dialog</h3>
       <div class="wrap">
-        <button id="open" class="button button-primary">dialog</button>
+        <button id="open" class="btn btn-primary">dialog</button>
         <div id="mask" class="back-drop">
           <div class="dialog">
             <div class="dialog-header">
@@ -77,8 +96,8 @@
               <p>删除后无法还原</p>
             </div>
             <div class="dialog-footer">
-              <button class="button">取 消</button>
-              <button class="button button-primary">确 定</button>
+              <button class="btn">取 消</button>
+              <button class="btn btn-primary">确 定</button>
             </div>
           </div>
         </div>
