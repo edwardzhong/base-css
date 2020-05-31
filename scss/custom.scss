@@ -1,16 +1,15 @@
 $fontColor: hsl(226, 12%, 34%);
 $borderColor: hsl(240, 6%, 83%);
 // $borderColorHover: hsl(240, 2%, 68%);
-
 $primary: hsl(213, 83%, 54%);
 // $primaryHover:hsl(213, 100%, 38%);
 $secondary: hsl(194, 70%, 56%);
 $succ: hsl(155, 72%, 39%);
 $warn: hsl(38, 100%, 48%);
 $error: hsl(0, 80%, 60%);
-
 $black: hsl(213, 9%, 24%);
 
+$fontSize: 14px;
 $borderRadius: 4px;
 $checkboxSize: 20px;
 
@@ -28,7 +27,7 @@ $checkboxSize: 20px;
 	border-radius: $borderRadius;
 	background-color: #fff;
 	box-sizing: border-box;
-	font-size: 14px;
+	font-size: $fontSize;
 	outline: none;
 	color: $fontColor;
 	-webkit-appearance: none;
@@ -62,7 +61,7 @@ textarea.input {
 .btn {
 	display: inline-block;
 	// line-height: 20px;
-	font-size: 14px;
+	font-size: $fontSize;
 	text-align: center;
 	color: $fontColor;
 	border-radius: $borderRadius;
@@ -223,6 +222,7 @@ input[type="radio"] {
 	user-select: none;
 	transition: border-color 0.2s;
 	overflow: hidden;
+	cursor: pointer;
 	// & + label {
 	// 	margin-left: 5px;
 	// }
@@ -410,7 +410,7 @@ input[type="radio"] {
 	background-color: hsla(0, 0, 0%, 0.5);
 	text-align: center;
 	color: $fontColor;
-	font-size: 14px;
+	font-size: $fontSize;
 	white-space: nowrap;
 	overflow: auto;
 	visibility: hidden;
@@ -447,16 +447,16 @@ input[type="radio"] {
 	}
 }
 .dialog-header {
+	padding: 16px;
+	background-color: $primary;
+	font-size: 16px;
 	text-align: center;
-	font-size: 20px;
-	color: 333;
-	padding: 40px 20px 20px;
+	color: #fff;
 }
 .dialog-body {
 	min-height: 40px;
-	padding: 0 20px;
+	padding: 20px;
 	text-align: center;
-	font-size: 16px;
 }
 .dialog-footer {
 	text-align: right;

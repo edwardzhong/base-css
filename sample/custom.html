@@ -15,11 +15,11 @@
       .wrap {
         padding: 10px 0;
       }
-      .tips{
+      .tips {
         padding: 4px 10px;
-        font-size:14px;
+        font-size: 14px;
         font-style: normal;
-        border:1px solid #ddd;
+        border: 1px solid #ddd;
         border-radius: 4px;
         cursor: pointer;
       }
@@ -75,8 +75,8 @@
       </div>
       <h3>switch</h3>
       <div class="wrap">
-        <input type="checkbox" id="switch"><label class="switch" for="switch"></label>
-        <input type="checkbox" id="switch3" checked disabled><label class="switch" for="switch3"></label>
+        <input type="checkbox" id="switch" /><label class="switch" for="switch"></label>
+        <input type="checkbox" id="switch3" checked disabled /><label class="switch" for="switch3"></label>
       </div>
       <h3>tip</h3>
       <div class="wrap">
@@ -109,13 +109,17 @@
       const openDialog = document.getElementById('open');
       openDialog.addEventListener(
         'click',
-        function(e) {
+        function (e) {
           mask.classList.add('show');
         },
         false,
       );
-
-      mask.onclick = function(e) {
+      dialog.onclick = function (e) {
+        if (e.target.nodeName !== 'BUTTON') {
+          e.stopPropagation();
+        }
+      };
+      mask.onclick = function (e) {
         mask.classList.remove('show');
       };
     </script>
