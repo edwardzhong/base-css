@@ -1,11 +1,19 @@
-// Clearfix
-@mixin clearfix {
-	&:before,
-	&:after {
-		content: " ";
-		display: table;
-	}
-	&:after {
+// clearfix
+@mixin clearfix() {
+	&::after {
+		display: block;
+		content: "";
 		clear: both;
+	}
+}
+
+// dpr font-size
+@mixin font-dpr($font-size: 16px) {
+	font-size: $font-size;
+	[data-dpr="2"] & {
+		font-size: $font-size * 2;
+	}
+	[data-dpr="3"] & {
+		font-size: $font-size * 3;
 	}
 }

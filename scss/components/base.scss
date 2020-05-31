@@ -1,19 +1,8 @@
 /*! 
-* Base-css v1.0.1 | MIT License | https://github.com/edwardzhong/base-css 
+* Base-css v1.0.2 | MIT License | https://github.com/edwardzhong/base-css 
 */
 /* Base Extras
    ========================================================================== */
-/* Mixin */
-@mixin font-dpr($font-size) {
-	font-size: $font-size;
-	[data-dpr="2"] & {
-		font-size: $font-size * 2;
-	}
-	[data-dpr="3"] & {
-		font-size: $font-size * 3;
-	}
-}
-
 html {
   width: 100%;
   height: 100%;
@@ -23,11 +12,17 @@ html {
   background-color: $body-bg;
   color: $text-color;
   @if $isWebapp {
-    @include font-dpr($font-size-base);
-    user-select: none;//文本不能选择
+    // @include font-dpr($font-size-base);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;//文本不能选择
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size-adjust: 100%;//关闭字体大小自动调整功能(iPhone 和 Android 的浏览器纵向 (Portrate mode) 和橫向 (Landscape mode) 模式皆有自动调整字体大小的功能)
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;//消除ios点击后的背景
-    -webkit-text-size-adjust: 100%;//关闭字体大小自动调整功能(iPhone 和 Android 的浏览器纵向 (Portrate mode) 和橫向 (Landscape mode) 模式皆有自动调整字体大小的功能)
-    font-size-adjust: 100%;
   }
 }
 body {
@@ -35,8 +30,7 @@ body {
   height: 100%;
   margin: 0;
 }
-// p, h1, h2, h3, h4, h5, h6 { margin: 0; }
-
+p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 ul, ol {
   margin: 0;
   padding: 0;
@@ -51,29 +45,27 @@ a {
   }
 }
 
-@if $isWebapp {
-  select {
-    appearance:none;
-  }
-  input, textarea {
-    // appearance: none;
-    outline: none;
-    resize: none;
-  }
+select {
+  -webkit-appearance: none;
+}
+input, textarea {
+  -webkit-appearance: none;
+  outline: none;
+  resize: none;
+}
 
-  img,a{
-    -webkit-touch-callout: none;//禁止系统默认菜单
-  }
+img,a{
+  -webkit-touch-callout: none;//禁止系统默认菜单
 }
 
 /**
  * Add this class to an image to make it fit within it's fluid parent wrapper while maintaining
  * aspect ratio.
  */
-.img {
+img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 /**
  * Always hide an element when it has the `hidden` HTML attribute.
