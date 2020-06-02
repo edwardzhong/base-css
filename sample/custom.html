@@ -9,6 +9,27 @@
     <title>Custom</title>
     <link rel="stylesheet" href="../css/custom.css" />
     <style>
+      .breadcrumb {
+        padding: 8px 16px;
+        margin-bottom: 20px;
+        list-style: none;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+      }
+
+      .breadcrumb > li {
+        display: inline-block;
+      }
+
+      .breadcrumb > li + li:before {
+        content: '/ ';
+        padding: 0 5px;
+        color: #ccc;
+      }
+
+      .breadcrumb > .active {
+        color: #777777;
+      }
       .main {
         padding: 20px;
       }
@@ -23,9 +44,15 @@
         border-radius: 4px;
         cursor: pointer;
       }
-      .loading{
+      .loading {
         width: 100px;
         padding: 10px;
+      }
+      .close-svg {
+        width: 50px;
+        height: 50px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' stroke-linecap='round' stroke-width='40' stroke='%237f7f7f'%3E %3Cline y2='350' x2='350' y1='50' x1='50'/%3E %3Cline y2='50' x2='350' y1='350' x1='50'/%3E%3C/svg%3E")
+          no-repeat center / cover;
       }
     </style>
   </head>
@@ -35,6 +62,25 @@
         <li><a href="index.html">Home</a></li>
         <li class="active">Custom</li>
       </ol>
+      <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300">
+        <!-- <g>
+          <title>文字路径</title>
+          <path id="path" d="M 50,20 a1,1 0 0,0 100,0 " fill="none" stroke="#555" />
+          <text x="10" y="100" stroke="hsl(280,100%,50%)">
+            <textPath xlink:href="#path">I Love SVG I Love SVG I Love SVG</textPath>
+          </text>
+        </g> -->
+        <g>
+          <path id="path" d="M 50 100 C 100 0 150 200 220 100 S 300 100 350 100" fill="none" stroke="#555" />
+          <text fill="hsla(260,80%,50%,1)" x="50" y="50" font-size="30">
+            I Love SVG
+          </text>
+          <text x="10" y="100" stroke="hsl(280,100%,50%)">
+            <textPath xlink:href="#path">I Love SVG I Love SVG I Love SVG</textPath>
+          </text>
+        </g>
+      </svg>
+      <div class="close-svg"></div>
       <h3>button</h3>
       <div class="wrap">
         <button class="btn">default Button</button>
@@ -130,7 +176,8 @@
         false,
       );
       dialog.onclick = function (e) {
-        if (e.target.nodeName !== 'BUTTON') {
+        const target = e.target;
+        if (!(target.nodeName == 'BUTTON' || target.className == 'close')) {
           e.stopPropagation();
         }
       };
