@@ -1,3 +1,5 @@
+@import 'common/encodeuri';
+
 $primary: hsl(213, 83%, 54%);
 // $primaryHover:hsl(213, 100%, 38%);
 $secondary: hsl(194, 70%, 56%);
@@ -185,7 +187,7 @@ input[type="checkbox"] {
 		display: block;
 		width: 100%;
 		height: 100%;
-		background: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 40l15 15 25-25' stroke-width='8' fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+		background: url(encodeSvg("<svg width='80' height='80'><path d='M20 40l15 15 25-25' stroke-width='8' fill='none' stroke='#fff' stroke-linecap='round' stroke-linejoin='round'/></svg>"))
 			no-repeat center/cover;
 		visibility: hidden;
 	}
@@ -239,7 +241,7 @@ input[type="radio"] {
 		width: 100%;
 		height: 100%;
 		// background-color: $primary;
-		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' %3E%3Ccircle cx='40' cy='40' r='24' fill='hsl(220,90%,60%)'/%3E%3C/svg%3E") no-repeat center/cover;
+		background: url(encodeSvg("<svg width='80' height='80'><circle cx='40' cy='40' r='24' fill='hsl(220,90%,60%)'/></svg>")) no-repeat center/cover;
 		visibility: hidden;
 	}
 
@@ -481,7 +483,7 @@ input[type="radio"] {
 		content: "";
 		width: 100%;
 		height: 100%;
-		background: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg' stroke-linecap='round' stroke-linejoin='round' stroke-width='8' stroke='%23fff'%3E%3Cpath d='M15 15l50 50M15 65l50-50'/%3E%3C/svg%3E")
+		background: url(encodeSvg("<svg width='80' height='80' stroke-linecap='round' stroke-linejoin='round' stroke-width='8' stroke='#fff'><path d='M15 15l50 50M15 65l50-50'/></svg>"))
 			no-repeat center / cover;
 	}
 }
@@ -498,7 +500,7 @@ input[type="radio"] {
 		width: 20px;
 		height: 20px;
 		margin: 0 0.5em;
-		background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M512 1024q-104 0-199-40-92-39-163-110T40 711Q0 616 0 512q0-15 10.5-25.5T36 476t25.5 10.5T72 512q0 90 35 171 33 79 94 140t140 95q81 34 171 34t171-35q79-33 140-94t95-140q34-81 34-171t-35-171q-33-79-94-140t-140-95q-81-34-171-34-15 0-25.5-10.5T476 36t10.5-25.5T512 0q104 0 199 40 92 39 163 110t110 163q40 95 40 199t-40 199q-39 92-110 163T711 984q-95 40-199 40z' fill='%232a80eb'/%3E%3C/svg%3E")
+		background: url(encodeSvg('<svg viewBox="0 0 1024 1024"><path d="M512 1024q-104 0-199-40-92-39-163-110T40 711Q0 616 0 512q0-15 10.5-25.5T36 476t25.5 10.5T72 512q0 90 35 171 33 79 94 140t140 95q81 34 171 34t171-35q79-33 140-94t95-140q34-81 34-171t-35-171q-33-79-94-140t-140-95q-81-34-171-34-15 0-25.5-10.5T476 36t10.5-25.5T512 0q104 0 199 40 92 39 163 110t110 163q40 95 40 199t-40 199q-39 92-110 163T711 984q-95 40-199 40z" fill="#2a80eb"/></svg>'))
 			no-repeat center / 100%;
 		animation: spin 1s linear infinite;
 		vertical-align: -4px;
